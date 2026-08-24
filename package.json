@@ -1,0 +1,22 @@
+{
+  "name": "context-dev-agent-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Server-side Context.dev web-data tools exposed as LLM function-calling tools",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts",
+    "proof": "tsx --env-file-if-exists=.env scripts/proof.ts"
+  },
+  "dependencies": {
+    "context.dev": "^2.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
