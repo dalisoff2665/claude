@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Secrets — never commit the real API key (see .env.example for the template)
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+
+# Logs / OS cruft
+*.log
+.DS_Store
