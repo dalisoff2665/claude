@@ -1,0 +1,31 @@
+{
+  "name": "alisov-tools",
+  "owner": {
+    "name": "Daniel Alisov",
+    "url": "https://github.com/dalisoff2665"
+  },
+  "metadata": {
+    "description": "Плагины Даниэля Алисова для Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "reels-factory",
+      "source": "./plugins/reels-factory",
+      "displayName": "Reels Factory",
+      "description": "Монтажная студия в Claude Code: сырой дубль на входе — смонтированный вертикальный ролик на выходе. Склейки по словным таймкодам, слайды с мокапами, чипы с лого, субтитры, музыка и SFX из Airtable, рендер через Remotion, публикация в Cloudinary.",
+      "version": "1.3.0",
+      "category": "content",
+      "keywords": [
+        "video",
+        "reels",
+        "remotion",
+        "ffmpeg",
+        "montage",
+        "instagram",
+        "airtable",
+        "cloudinary"
+      ]
+    }
+  ]
+}

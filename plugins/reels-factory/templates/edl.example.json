@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 48.0,
+    "title": "Claude Code монтирует рилсы за тебя",
+    "reference": "ref/REFERENCE-01.md"
+  },
+  "aroll": "raw/aroll.mp4",
+  "cuts": [
+    {
+      "s": 8.42,
+      "e": 9.31,
+      "reason": "pause"
+    },
+    {
+      "s": 17.05,
+      "e": 17.62,
+      "reason": "filler"
+    },
+    {
+      "s": 31.2,
+      "e": 32.88,
+      "reason": "restart"
+    }
+  ],
+  "timeline": [
+    {
+      "type": "chip",
+      "s": 2.9,
+      "e": 4.1,
+      "label": "Транскрипт",
+      "position": "left",
+      "anchor_word": "первое"
+    },
+    {
+      "type": "chip",
+      "s": 4.2,
+      "e": 5.4,
+      "label": "План монтажа",
+      "position": "center",
+      "anchor_word": "второе"
+    },
+    {
+      "type": "chip",
+      "s": 5.5,
+      "e": 6.8,
+      "label": "Рендер",
+      "position": "right",
+      "anchor_word": "третье"
+    },
+    {
+      "type": "slide",
+      "s": 7.0,
+      "e": 12.4,
+      "anchor_word": "ставим",
+      "eyebrow": "ПРОЦЕСС / 01 — ТРАНСКРИПТ",
+      "title": "Каждое слово.\nС таймкодом.",
+      "mockup": "raw/shots/whisper.png",
+      "mockup_kind": "terminal",
+      "caption": "faster-whisper локально, без API и без оплаты.",
+      "transition": "cut",
+      "bg": "https://res.cloudinary.com/dm30hfevr/video/upload/BG/purple_neon_greed.mp4"
+    },
+    {
+      "type": "chip",
+      "s": 14.2,
+      "e": 15.6,
+      "label": "n8n",
+      "logo": "n8n",
+      "position": "left",
+      "anchor_word": "конвейер"
+    },
+    {
+      "type": "slide",
+      "s": 17.8,
+      "e": 23.9,
+      "anchor_word": "план",
+      "eyebrow": "ПРОЦЕСС / 02 — ПЛАН МОНТАЖА",
+      "title": "Склейка на слове,\nа не по сетке.",
+      "mockup": "raw/shots/edl.png",
+      "mockup_kind": "window",
+      "caption": "Claude пишет EDL, а не режет вслепую.",
+      "bg": "https://res.cloudinary.com/dm30hfevr/video/upload/BG/waves_white.mp4"
+    },
+    {
+      "type": "broll",
+      "s": 26.0,
+      "e": 30.5,
+      "anchor_word": "смотрите",
+      "src": "raw/demo/render.mp4",
+      "src_in": 12.0,
+      "speed": 2.5
+    },
+    {
+      "type": "slide",
+      "s": 32.0,
+      "e": 38.5,
+      "anchor_word": "рендер",
+      "eyebrow": "ПРОЦЕСС / 03 — РЕНДЕР",
+      "title": "Remotion собирает\nиз кода.",
+      "mockup": "raw/shots/remotion.png",
+      "mockup_kind": "window",
+      "caption": "Один и тот же шаблон на сто роликов.",
+      "bg": "https://res.cloudinary.com/dm30hfevr/video/upload/BG/grid_white.mp4"
+    },
+    {
+      "type": "pip",
+      "s": 41.0,
+      "e": 47.5,
+      "anchor_word": "результат",
+      "src": "raw/demo/result.mp4",
+      "src_in": 0
+    },
+    {
+      "type": "chip",
+      "s": 44.0,
+      "e": 45.6,
+      "label": "3 ролика в день",
+      "position": "right",
+      "anchor_word": "результат"
+    }
+  ],
+  "captions": [
+    {
+      "s": 0.3,
+      "e": 2.6,
+      "text": "Claude Code монтирует рилсы",
+      "highlight": [
+        "монтирует"
+      ]
+    },
+    {
+      "s": 2.9,
+      "e": 4.1,
+      "text": "Первое — транскрипт",
+      "highlight": [
+        "транскрипт"
+      ]
+    },
+    {
+      "s": 4.2,
+      "e": 5.4,
+      "text": "Второе — план монтажа",
+      "highlight": [
+        "план"
+      ]
+    },
+    {
+      "s": 5.5,
+      "e": 6.8,
+      "text": "Третье — рендер",
+      "highlight": [
+        "рендер"
+      ]
+    },
+    {
+      "s": 7.0,
+      "e": 9.4,
+      "text": "Ставим faster-whisper локально",
+      "highlight": [
+        "faster-whisper"
+      ]
+    },
+    {
+      "s": 9.5,
+      "e": 12.4,
+      "text": "Он даёт таймкод на каждое слово",
+      "highlight": [
+        "каждое",
+        "слово"
+      ]
+    }
+  ],
+  "audio": {
+    "music": {
+      "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/bg.mp3",
+      "gain_db": -26,
+      "fade_in": 0.5,
+      "fade_out": 1.2
+    },
+    "sfx": [
+      {
+        "at": 2.9,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/pop.mp3",
+        "gain_db": -14,
+        "note": "появление первого чипа"
+      },
+      {
+        "at": 7.0,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/whoosh.mp3",
+        "gain_db": -12,
+        "note": "переход на слайд 01"
+      },
+      {
+        "at": 26.0,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/keyword_typing.mp3",
+        "gain_db": -16,
+        "note": "под скринкаст"
+      }
+    ],
+    "target_lufs": -14
+  },
+  "cover": {
+    "frame_at": 1.4,
+    "h1": "CLAUDE CODE",
+    "h2": "монтирует за тебя"
+  }
+}

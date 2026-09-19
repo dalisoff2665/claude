@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "width": 1080, "height": 1920, "fps": 24, "duration": 28.0,
+    "title": "5 MCP которые я реально использую",
+    "reference": "reference/REFERENCE-02-yapping.md"
+  },
+  "preset": "yapping",
+  "captions_style": "word",
+  "aroll": "raw/aroll.mp4",
+
+  "cuts": [
+    { "s": 4.10, "e": 4.72, "reason": "filler" },
+    { "s": 15.30, "e": 16.05, "reason": "pause" }
+  ],
+
+  "timeline": [
+    { "type": "chip", "variant": "plate", "s": 1.6, "e": 2.4,
+      "label": "ПЕРВЫЙ", "logo": "airtable", "anchor_word": "первый" },
+    { "type": "slide", "s": 2.4, "e": 3.4, "mockup_kind": "none",
+      "mockup": "raw/shots/airtable-base.png", "anchor_word": "база" },
+    { "type": "slide", "s": 3.4, "e": 4.3, "mockup_kind": "none",
+      "mockup": "raw/shots/airtable-mcp.png", "anchor_word": "прямо" },
+
+    { "type": "chip", "variant": "plate", "s": 8.2, "e": 9.0,
+      "label": "ВТОРОЙ", "logo": "playwright", "anchor_word": "второй" },
+    { "type": "slide", "s": 9.0, "e": 10.1, "mockup_kind": "none",
+      "mockup": "raw/shots/playwright-run.png", "anchor_word": "браузер" },
+
+    { "type": "chip", "variant": "plate", "s": 14.0, "e": 14.8,
+      "label": "ТРЕТИЙ", "logo": "cloudinary", "anchor_word": "третий" },
+    { "type": "broll", "s": 14.8, "e": 16.4, "src": "raw/demo/upload.mp4",
+      "src_in": 3.0, "speed": 3, "anchor_word": "заливает" },
+
+    { "type": "chip", "s": 25.0, "e": 27.5, "label": "'MCP'",
+      "position": "center", "anchor_word": "комментарий" }
+  ],
+
+  "captions": [
+    { "s": 0.30, "e": 0.62, "text": "Пять" },
+    { "s": 0.62, "e": 1.05, "text": "MCP" },
+    { "s": 1.05, "e": 1.48, "text": "которые" },
+    { "s": 1.48, "e": 1.60, "text": "работают" },
+    { "s": 2.40, "e": 2.85, "text": "Airtable" },
+    { "s": 2.85, "e": 3.30, "text": "вся" },
+    { "s": 3.30, "e": 3.72, "text": "база" },
+    { "s": 3.72, "e": 4.10, "text": "внутри" }
+  ],
+
+  "audio": {
+    "music": {
+      "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/bg.mp3",
+      "gain_db": -28
+    },
+    "sfx": [
+      { "at": 1.6, "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/pop.mp3",
+        "gain_db": -13, "note": "плашка ПЕРВЫЙ" },
+      { "at": 2.4, "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/whoosh.mp3",
+        "gain_db": -14, "note": "уход на скриншот" }
+    ],
+    "target_lufs": -14
+  }
+}

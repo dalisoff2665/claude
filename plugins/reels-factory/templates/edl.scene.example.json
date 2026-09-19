@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 54.0,
+    "title": "ИИ-агент, который продаёт за тебя в директе",
+    "reference": "reference/REFERENCE-04-scene.md",
+    "speaker_card": {
+      "cardWidth": 45,
+      "cardBottom": 1.6,
+      "cardRadius": 42
+    }
+  },
+  "preset": "scene",
+  "captions_style": "underline",
+  "theme": {
+    "sceneBg": "#101114",
+    "badgeBg": "#131217",
+    "accent": "#3FE8C2",
+    "dot": 22
+  },
+  "aroll": "raw/aroll.mp4",
+  "cuts": [
+    {
+      "s": 7.4,
+      "e": 8.05,
+      "reason": "pause"
+    },
+    {
+      "s": 22.1,
+      "e": 22.8,
+      "reason": "filler"
+    }
+  ],
+  "timeline": [
+    {
+      "type": "scene",
+      "s": 0.0,
+      "e": 4.5,
+      "scene_kind": "dark",
+      "anchor_word": "ассистент"
+    },
+    {
+      "type": "badge_stack",
+      "s": 0.4,
+      "e": 4.5,
+      "anchor_word": "claude",
+      "badges": [
+        {
+          "label": "Claude Code",
+          "logo": "claude"
+        }
+      ]
+    },
+    {
+      "type": "scene",
+      "s": 4.5,
+      "e": 7.0,
+      "scene_kind": "color",
+      "color": "#FA792B",
+      "anchor_word": "вместо"
+    },
+    {
+      "type": "bigfig",
+      "s": 4.8,
+      "e": 7.0,
+      "big": "$25",
+      "unit": "в месяц за ManyChat",
+      "scene_kind": "color",
+      "anchor_word": "двадцать"
+    },
+    {
+      "type": "scene",
+      "s": 7.0,
+      "e": 14.0,
+      "scene_kind": "dark",
+      "anchor_word": "смотри"
+    },
+    {
+      "type": "mockup",
+      "s": 7.2,
+      "e": 11.0,
+      "mockup": "raw/shots/dm-flow.png",
+      "mockup_kind": "phone",
+      "anchor_word": "директ"
+    },
+    {
+      "type": "bigfig",
+      "s": 11.0,
+      "e": 14.0,
+      "big": "до $1 409",
+      "unit": "приносит эта связка",
+      "anchor_word": "тысячи"
+    },
+    {
+      "type": "scene",
+      "s": 14.0,
+      "e": 16.5,
+      "scene_kind": "light",
+      "anchor_word": "три"
+    },
+    {
+      "type": "bigfig",
+      "s": 14.2,
+      "e": 16.5,
+      "big": "3 лёгких шага",
+      "scene_kind": "light",
+      "anchor_word": "шага"
+    },
+    {
+      "type": "scene",
+      "s": 16.5,
+      "e": 48.0,
+      "scene_kind": "dark",
+      "anchor_word": "первый"
+    },
+    {
+      "type": "badge_stack",
+      "s": 16.5,
+      "e": 21.5,
+      "anchor_word": "первый",
+      "badges": [
+        {
+          "label": "Claude Code",
+          "logo": "claude"
+        },
+        {
+          "label": "Zernio",
+          "number": "1"
+        }
+      ]
+    },
+    {
+      "type": "badge_stack",
+      "s": 21.5,
+      "e": 26.0,
+      "anchor_word": "бесплатно",
+      "badges": [
+        {
+          "label": "Claude Code",
+          "logo": "claude"
+        },
+        {
+          "label": "Zernio",
+          "number": "1"
+        }
+      ]
+    },
+    {
+      "type": "badge_stack",
+      "s": 26.0,
+      "e": 34.0,
+      "anchor_word": "второй",
+      "badges": [
+        {
+          "label": "Claude Code",
+          "logo": "claude"
+        },
+        {
+          "label": "Zernio",
+          "number": "1"
+        },
+        {
+          "label": "OpenRouter",
+          "number": "2"
+        }
+      ]
+    },
+    {
+      "type": "badge_stack",
+      "s": 34.0,
+      "e": 42.0,
+      "anchor_word": "третий",
+      "badges": [
+        {
+          "label": "Claude Code",
+          "logo": "claude"
+        },
+        {
+          "label": "Zernio",
+          "number": "1"
+        },
+        {
+          "label": "OpenRouter",
+          "number": "2"
+        },
+        {
+          "label": "сервер",
+          "number": "3"
+        }
+      ]
+    },
+    {
+      "type": "mockup",
+      "s": 42.0,
+      "e": 48.0,
+      "mockup": "raw/shots/agent-live.png",
+      "mockup_kind": "phone",
+      "anchor_word": "работает"
+    },
+    {
+      "type": "scene",
+      "s": 48.0,
+      "e": 54.0,
+      "scene_kind": "light",
+      "anchor_word": "напиши"
+    },
+    {
+      "type": "bigfig",
+      "s": 48.2,
+      "e": 54.0,
+      "big": "«агент»",
+      "unit": "в комментарий — пришлю промпт и инструкцию",
+      "scene_kind": "light",
+      "anchor_word": "агент"
+    }
+  ],
+  "captions": [
+    {
+      "s": 0.3,
+      "e": 2.4,
+      "text": "Как через Claude Code сделать себе ИИ-ассистента",
+      "highlight": [
+        "себе"
+      ]
+    },
+    {
+      "s": 2.4,
+      "e": 4.5,
+      "text": "в директ за 7 долларов в месяц",
+      "highlight": [
+        "7"
+      ]
+    },
+    {
+      "s": 4.5,
+      "e": 7.0,
+      "text": "Он сам продаёт твои услуги",
+      "highlight": [
+        "продаёт"
+      ]
+    },
+    {
+      "s": 16.5,
+      "e": 20.0,
+      "text": "Первый — Zernio. Он бесплатно подключает Instagram к боту",
+      "highlight": [
+        "Zernio"
+      ]
+    },
+    {
+      "s": 34.0,
+      "e": 37.0,
+      "text": "Третий — сервер. Нужен недорогой",
+      "highlight": [
+        "сервер."
+      ]
+    }
+  ],
+  "audio": {
+    "music": {
+      "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/bg.mp3",
+      "gain_db": -27
+    },
+    "sfx": [
+      {
+        "at": 0.4,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/pop.mp3",
+        "gain_db": -14,
+        "note": "первый бейдж"
+      },
+      {
+        "at": 4.5,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/whoosh.mp3",
+        "gain_db": -13,
+        "note": "смена главы на оранжевую"
+      },
+      {
+        "at": 26.0,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/pop.mp3",
+        "gain_db": -15,
+        "note": "второй бейдж встал в стек"
+      }
+    ],
+    "target_lufs": -14
+  }
+}
