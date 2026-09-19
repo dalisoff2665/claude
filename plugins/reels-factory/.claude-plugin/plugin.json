@@ -1,0 +1,17 @@
+{
+  "name": "reels-factory",
+  "version": "1.3.0",
+  "description": "Монтаж вертикальных роликов в Claude Code: пять пресетов по разобранным референсам, склейки по словным таймкодам, Remotion, Cloudinary, Airtable.",
+  "author": {
+    "name": "Daniel Alisov"
+  },
+  "keywords": [
+    "video",
+    "reels",
+    "remotion",
+    "ffmpeg",
+    "instagram"
+  ],
+  "homepage": "https://github.com/dalisoff2665/claude",
+  "repository": "https://github.com/dalisoff2665/claude"
+}

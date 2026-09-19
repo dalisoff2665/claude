@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 62.0,
+    "title": "4 MCP, без которых Claude просто болталка",
+    "reference": "reference/REFERENCE-03-split.md"
+  },
+  "preset": "split",
+  "captions_style": "progressive",
+  "theme": {
+    "panelTop": "#303E4D",
+    "panelBottom": "#253143",
+    "accent": "#FF7445",
+    "grid": 40
+  },
+  "aroll": "raw/aroll.mp4",
+  "cuts": [
+    {
+      "s": 6.2,
+      "e": 6.95,
+      "reason": "pause"
+    },
+    {
+      "s": 24.4,
+      "e": 25.1,
+      "reason": "filler"
+    }
+  ],
+  "timeline": [
+    {
+      "type": "panel",
+      "s": 0.0,
+      "e": 5.2,
+      "panel_kind": "plain",
+      "eyebrow": "MCP × CLAUDE",
+      "title": "ни одного",
+      "chip_word": "коннектора",
+      "anchor_word": "ни"
+    },
+    {
+      "type": "panel",
+      "s": 5.2,
+      "e": 11.0,
+      "panel_kind": "color",
+      "color": "green",
+      "big": "4",
+      "unit": "подключения, которые реально нужны",
+      "eyebrow": "ЧТО СТАВИМ",
+      "anchor_word": "четыре"
+    },
+    {
+      "type": "aroll_fullscreen",
+      "s": 11.0,
+      "e": 17.5,
+      "anchor_word": "смотри"
+    },
+    {
+      "type": "panel",
+      "s": 17.5,
+      "e": 25.0,
+      "panel_kind": "mockup",
+      "eyebrow": "01 — AIRTABLE",
+      "mockup": "raw/shots/airtable-mcp.png",
+      "anchor_word": "первый"
+    },
+    {
+      "type": "panel",
+      "s": 25.0,
+      "e": 32.0,
+      "panel_kind": "mockup",
+      "eyebrow": "02 — PLAYWRIGHT",
+      "mockup": "raw/shots/playwright.png",
+      "anchor_word": "второй"
+    },
+    {
+      "type": "aroll_fullscreen",
+      "s": 32.0,
+      "e": 38.0,
+      "anchor_word": "работает"
+    },
+    {
+      "type": "panel",
+      "s": 38.0,
+      "e": 45.5,
+      "panel_kind": "mockup",
+      "eyebrow": "03 — CLOUDINARY",
+      "mockup": "raw/shots/cloudinary.png",
+      "anchor_word": "третий"
+    },
+    {
+      "type": "panel",
+      "s": 45.5,
+      "e": 53.0,
+      "panel_kind": "color",
+      "color": "blue",
+      "big": "30",
+      "unit": "секунд на весь разбор",
+      "eyebrow": "СКОЛЬКО ЗАНИМАЕТ",
+      "anchor_word": "тридцать"
+    },
+    {
+      "type": "panel",
+      "s": 53.0,
+      "e": 59.5,
+      "panel_kind": "plain",
+      "eyebrow": "ЗАБРАТЬ",
+      "title": "Пиши в комментарий",
+      "chip_word": "MCP",
+      "anchor_word": "комментарий"
+    },
+    {
+      "type": "aroll_fullscreen",
+      "s": 59.5,
+      "e": 62.0,
+      "anchor_word": "жду"
+    }
+  ],
+  "captions": [
+    {
+      "s": 0.3,
+      "e": 2.6,
+      "text": "У тебя стоит Claude",
+      "words": [
+        {
+          "w": "У",
+          "s": 0.3
+        },
+        {
+          "w": "тебя",
+          "s": 0.52
+        },
+        {
+          "w": "стоит",
+          "s": 0.95
+        },
+        {
+          "w": "Claude",
+          "s": 1.6
+        }
+      ]
+    },
+    {
+      "s": 2.6,
+      "e": 5.2,
+      "text": "и ни одного коннектора",
+      "words": [
+        {
+          "w": "и",
+          "s": 2.6
+        },
+        {
+          "w": "ни",
+          "s": 2.78
+        },
+        {
+          "w": "одного",
+          "s": 3.15
+        },
+        {
+          "w": "коннектора",
+          "s": 3.9
+        }
+      ]
+    },
+    {
+      "s": 5.2,
+      "e": 8.1,
+      "text": "Четыре подключения меняют всё",
+      "words": [
+        {
+          "w": "Четыре",
+          "s": 5.2
+        },
+        {
+          "w": "подключения",
+          "s": 5.95
+        },
+        {
+          "w": "меняют",
+          "s": 6.95
+        },
+        {
+          "w": "всё",
+          "s": 7.5
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "music": {
+      "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/bg.mp3",
+      "gain_db": -27
+    },
+    "sfx": [
+      {
+        "at": 5.2,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/whoosh.mp3",
+        "gain_db": -15,
+        "note": "смена панели на цифру"
+      },
+      {
+        "at": 17.5,
+        "url": "https://res.cloudinary.com/dm30hfevr/video/upload/MUSIC/pop.mp3",
+        "gain_db": -14,
+        "note": "первый коннектор"
+      }
+    ],
+    "target_lufs": -14
+  }
+}
