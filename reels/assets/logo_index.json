@@ -1,0 +1,10 @@
+{
+  "_comment": "Карта id -> лого. Чтобы поставить официальный логотип — положи его SVG в assets/logos/ и поменяй file. Остальной пайплайн трогать не нужно.",
+  "logos": {
+    "airtable":   { "file": "logos/airtable.svg",   "label": "Airtable",   "color": "#FCB400" },
+    "playwright": { "file": "logos/playwright.svg", "label": "Playwright", "color": "#2EAD33" },
+    "cloudinary": { "file": "logos/cloudinary.svg", "label": "Cloudinary", "color": "#3448C5" },
+    "gemini":     { "file": "logos/gemini.svg",     "label": "Gemini",     "color": "#9B72CB" },
+    "kie":        { "file": "logos/kie.svg",        "label": "kie.ai",     "color": "#7C5CFF" }
+  }
+}
