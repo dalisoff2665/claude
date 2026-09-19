@@ -1,0 +1,536 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EDL — монтажный план reels-factory",
+  "type": "object",
+  "required": [
+    "meta",
+    "timeline",
+    "captions",
+    "audio"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "duration"
+      ],
+      "properties": {
+        "width": {
+          "const": 1080
+        },
+        "height": {
+          "const": 1920
+        },
+        "fps": {
+          "enum": [
+            24,
+            30
+          ],
+          "default": 30
+        },
+        "duration": {
+          "type": "number",
+          "maximum": 90
+        },
+        "title": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string",
+          "description": "какой ref/REPORT.md брали за ритм"
+        },
+        "speaker_card": {
+          "type": "object",
+          "description": "карточка спикера в пресете scene. Задаётся один раз и не меняется весь ролик.",
+          "properties": {
+            "cardWidth": {
+              "type": "number",
+              "default": 45
+            },
+            "cardBottom": {
+              "type": "number",
+              "default": 1.6
+            },
+            "cardRadius": {
+              "type": "number",
+              "default": 42
+            }
+          }
+        }
+      }
+    },
+    "cuts": {
+      "type": "array",
+      "description": "вырезы из A-roll: паузы, запинки, фальстарты. Координаты — исходный таймкод.",
+      "items": {
+        "type": "object",
+        "required": [
+          "s",
+          "e",
+          "reason"
+        ],
+        "properties": {
+          "s": {
+            "type": "number"
+          },
+          "e": {
+            "type": "number"
+          },
+          "reason": {
+            "enum": [
+              "pause",
+              "filler",
+              "restart",
+              "repeat",
+              "offtopic"
+            ]
+          }
+        }
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "description": "слои поверх A-roll, в хронологическом порядке. Времена — В СМОНТИРОВАННОМ ролике (после cuts).",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "s",
+          "e"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "aroll",
+              "aroll_fullscreen",
+              "panel",
+              "slide",
+              "broll",
+              "pip",
+              "chip",
+              "scene",
+              "badge_stack",
+              "bigfig",
+              "mockup",
+              "photo",
+              "clip",
+              "place",
+              "cutout",
+              "panel_top",
+              "headline",
+              "accent_title",
+              "topslot"
+            ]
+          },
+          "s": {
+            "type": "number"
+          },
+          "e": {
+            "type": "number"
+          },
+          "anchor_word": {
+            "type": "string",
+            "description": "слово из words.json, на котором стоит этот элемент"
+          },
+          "src": {
+            "type": "string",
+            "description": "для broll/pip: файл"
+          },
+          "src_in": {
+            "type": "number",
+            "description": "для broll/pip: откуда в исходнике"
+          },
+          "speed": {
+            "type": "number",
+            "default": 1,
+            "description": "ускорение скринкаста, 1.5–4"
+          },
+          "eyebrow": {
+            "type": "string",
+            "description": "для slide: ПРОЦЕСС / 02 — РЕФЕРЕНСЫ"
+          },
+          "title": {
+            "type": "string",
+            "description": "для slide: крупный заголовок, максимум 2 строки"
+          },
+          "caption": {
+            "type": "string",
+            "description": "для slide: подпись под мокапом"
+          },
+          "mockup": {
+            "type": "string",
+            "description": "для slide: путь к скриншоту, рендерится в рамке окна"
+          },
+          "mockup_kind": {
+            "enum": [
+              "window",
+              "terminal",
+              "phone",
+              "none"
+            ],
+            "default": "window"
+          },
+          "label": {
+            "type": "string",
+            "description": "для chip: текст в пилюле"
+          },
+          "logo": {
+            "type": "string",
+            "description": "для chip: ключ из assets.logo_index"
+          },
+          "position": {
+            "enum": [
+              "left",
+              "center",
+              "right"
+            ],
+            "default": "center"
+          },
+          "transition": {
+            "enum": [
+              "cut",
+              "fade",
+              "whip",
+              "zoom"
+            ],
+            "default": "cut"
+          },
+          "bg": {
+            "type": "string",
+            "description": "для slide: анимированный фон (Cloudinary из assets.backgrounds). Снимает претензию валидатора на статику."
+          },
+          "variant": {
+            "enum": [
+              "pill",
+              "plate"
+            ],
+            "default": "pill",
+            "description": "для chip: pill — светлая пилюля с лого; plate — ретро-плашка счётчика FIRST/SECOND (пресет yapping)"
+          },
+          "panel_kind": {
+            "enum": [
+              "plain",
+              "color",
+              "mockup"
+            ],
+            "default": "plain",
+            "description": "для panel: plain — заголовок на сетке; color — крупная цифра на цветном; mockup — скриншот в рамке"
+          },
+          "big": {
+            "type": "string",
+            "description": "для panel color: крупная цифра"
+          },
+          "unit": {
+            "type": "string",
+            "description": "для panel color: подпись под цифрой"
+          },
+          "color": {
+            "enum": [
+              "green",
+              "blue"
+            ],
+            "description": "для panel color"
+          },
+          "chip_word": {
+            "type": "string",
+            "description": "для panel: слово в акцентной плашке под заголовком"
+          },
+          "scene_kind": {
+            "enum": [
+              "dark",
+              "light",
+              "color"
+            ],
+            "default": "dark",
+            "description": "для scene: фон главы. Не больше 4 смен на ролик."
+          },
+          "badges": {
+            "type": "array",
+            "description": "для badge_stack: накапливающиеся пилюли",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "logo": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "string"
+                },
+                "offset_x": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "motion": {
+            "enum": [
+              "in",
+              "out",
+              "left",
+              "right",
+              "none"
+            ],
+            "default": "in",
+            "description": "для photo: направление Ken Burns. Чередуй — три наезда подряд выглядят как глюк."
+          },
+          "place": {
+            "type": "string",
+            "description": "для place: название места"
+          },
+          "date": {
+            "type": "string",
+            "description": "для place: дата под названием"
+          },
+          "card_top": {
+            "type": "number",
+            "default": 66.2,
+            "description": "для cutout: верх карточки под человеком, % высоты"
+          },
+          "overlap": {
+            "type": "number",
+            "default": 16.6,
+            "description": "для cutout: насколько голова выходит ВЫШЕ карточки, % высоты. Это и есть весь приём — ноль убивает эффект"
+          },
+          "card_color": {
+            "type": "string",
+            "description": "для cutout: цвет карточки под человеком"
+          },
+          "text": {
+            "type": "string",
+            "description": "для headline / accent_title"
+          },
+          "size": {
+            "type": "number",
+            "description": "для accent_title: кегль"
+          },
+          "aroll_raw": {
+            "type": "string",
+            "description": "для cutout: ИСХОДНОЕ видео с фоном — идёт внутрь карточки. edl.aroll при этом должен быть .webm без фона. Без этой пары карточка будет плоской заливкой и эффект пропадёт."
+          }
+        }
+      }
+    },
+    "captions": {
+      "type": "array",
+      "description": "фразы по 2–5 слов, времена в смонтированном ролике",
+      "items": {
+        "type": "object",
+        "required": [
+          "s",
+          "e",
+          "text"
+        ],
+        "properties": {
+          "s": {
+            "type": "number"
+          },
+          "e": {
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          },
+          "highlight": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "1–2 слова из text, которые красятся акцентным цветом"
+          }
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "required": [
+        "music"
+      ],
+      "properties": {
+        "music": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "gain_db": {
+              "type": "number",
+              "default": -26,
+              "maximum": -20
+            },
+            "fade_in": {
+              "type": "number",
+              "default": 0.5
+            },
+            "fade_out": {
+              "type": "number",
+              "default": 1.0
+            }
+          }
+        },
+        "sfx": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "at",
+              "url"
+            ],
+            "properties": {
+              "at": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "gain_db": {
+                "type": "number",
+                "default": -12
+              },
+              "note": {
+                "type": "string",
+                "description": "зачем здесь этот звук"
+              },
+              "recipe": {
+                "enum": [
+                  "whoosh_heavy",
+                  "impact_soft",
+                  "ui_pop",
+                  "riser_short",
+                  "data_glitch"
+                ],
+                "description": "слоистый эффект из sfx_forge. Замер эталона: энергия в нижней середине, верх на 10 dB тише. Ставить на смысловой акцент, не на каждое движение — в референсе транзиент раз в 1–2.5 секунды"
+              }
+            }
+          }
+        },
+        "target_lufs": {
+          "type": "number",
+          "default": -14
+        },
+        "duck": {
+          "type": "object",
+          "description": "приглушение музыки под SFX и речь",
+          "properties": {
+            "amount_db": {
+              "type": "number",
+              "default": -6
+            },
+            "attack_ms": {
+              "type": "number",
+              "default": 20
+            },
+            "release_ms": {
+              "type": "number",
+              "default": 250
+            }
+          }
+        }
+      }
+    },
+    "cover": {
+      "type": "object",
+      "properties": {
+        "frame_at": {
+          "type": "number"
+        },
+        "h1": {
+          "type": "string"
+        },
+        "h2": {
+          "type": "string"
+        }
+      }
+    },
+    "preset": {
+      "enum": [
+        "slides",
+        "yapping",
+        "split",
+        "scene",
+        "story",
+        "cutout",
+        "topslot"
+      ],
+      "default": "slides",
+      "description": "slides — REFERENCE-01 (мокапы, eyebrow, план ~3с). yapping — REFERENCE-02 (словные субтитры, сырые скриншоты, план ~1.7с). split — REFERENCE-03 (панель сверху 50%, живое селфи снизу, план ~5.7с). scene — REFERENCE-04 (сцена + фиксированная карточка спикера внизу, бейджи накапливаются). story — поездки: фото с Ken Burns и видео с телефона, вертикальная вписка через размытую подложку. cutout — REFERENCE-05 (человек вырезан по контуру и лежит ПОВЕРХ карточки, голова выходит за её край; светлый фон, план ~1.4с, serif-курсив на акцентах). topslot — REFERENCE-06 (скриншот узкой полосой сверху 33%, лицо доминирует, субтитр на стыке)."
+    },
+    "captions_style": {
+      "enum": [
+        "phrase",
+        "word",
+        "progressive",
+        "underline"
+      ],
+      "default": "phrase",
+      "description": "word — одно слово крупно по центру-верху, кегль 96 (пресет yapping) progressive — произнесённое белым, остаток фразы серым (пресет split). underline — ключевое слово подчёркнуто акцентом, цвет текста не меняется (пресет scene)."
+    },
+    "theme": {
+      "type": "object",
+      "description": "переопределение дизайн-токенов. ОДИН акцентный цвет на ролик — не добавляй второй.",
+      "properties": {
+        "panelTop": {
+          "type": "string"
+        },
+        "panelBottom": {
+          "type": "string"
+        },
+        "accent": {
+          "type": "string"
+        },
+        "green": {
+          "type": "string"
+        },
+        "blue": {
+          "type": "string"
+        },
+        "grid": {
+          "type": "number",
+          "default": 40
+        }
+      }
+    },
+    "head_layout": {
+      "enum": [
+        "split",
+        "split_reverse",
+        "cutout",
+        "jump",
+        "circle"
+      ],
+      "description": "формат говорящей головы (те же пять, что в CLONY). split — демо сверху, ты снизу; split_reverse — наоборот; cutout — демо на весь кадр, ты внизу без фона (нужен .webm с альфой); jump — угол меняется каждые 2.5с; circle — ты в кружке поверх демо. Отменяет обычную раскладку пресета."
+    },
+    "demo_share": {
+      "type": "number",
+      "default": 62,
+      "minimum": 15,
+      "maximum": 85,
+      "description": "доля кадра под демо, %"
+    },
+    "demo": {
+      "type": "string",
+      "description": "файл или URL демо-видео под head_layout"
+    },
+    "speech_rate": {
+      "enum": [
+        1,
+        1.1,
+        1.2
+      ],
+      "default": 1,
+      "description": "темп речи; применяется на этапе ffmpeg (atempo), не в Remotion"
+    },
+    "top_split": {
+      "type": "number",
+      "default": 33,
+      "minimum": 20,
+      "maximum": 45,
+      "description": "для topslot: доля верхней полосы, %"
+    }
+  }
+}
