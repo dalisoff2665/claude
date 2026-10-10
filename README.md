@@ -78,7 +78,7 @@
 Глобально на своей машине:
 
 ```
-/plugin marketplace add orchestra-research/AI-research-SKILLs@v1.7.2
+/plugin marketplace add orchestra-research/AI-research-SKILLs
 /plugin install agents@ai-research-skills
 ```
 
