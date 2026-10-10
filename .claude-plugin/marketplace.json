@@ -26,6 +26,21 @@
         "airtable",
         "cloudinary"
       ]
+    },
+    {
+      "name": "security-audit",
+      "source": "./plugins/security-audit",
+      "displayName": "Security Audit",
+      "description": "Скилл Cloudflare для аудита безопасности кода: шесть фаз — разведка, охота по классам атак, адверсариальная валидация, findings.json по схеме, перепроверка, отчёт. Валидаторы на Node без зависимостей.",
+      "version": "1.0.0",
+      "category": "security",
+      "keywords": [
+        "security",
+        "audit",
+        "pentest",
+        "vulnerabilities",
+        "cloudflare"
+      ]
     }
   ]
 }

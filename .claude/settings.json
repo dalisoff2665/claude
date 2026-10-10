@@ -1,0 +1,19 @@
+{
+  "extraKnownMarketplaces": {
+    "ai-research-skills": {
+      "source": {
+        "source": "github",
+        "repo": "orchestra-research/AI-research-SKILLs",
+        "ref": "v1.7.2"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "agents@ai-research-skills": true,
+    "rag@ai-research-skills": true,
+    "prompt-engineering@ai-research-skills": true,
+    "observability@ai-research-skills": true,
+    "inference-serving@ai-research-skills": true,
+    "safety-alignment@ai-research-skills": true
+  }
+}
