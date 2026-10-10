@@ -1,0 +1,12 @@
+{
+  "name": "security-audit",
+  "version": "1.0.0",
+  "description": "Аудит безопасности кодовой базы от Cloudflare: разведка, охота по классам атак, независимая валидация находок, отчёт. Upstream: cloudflare/security-audit-skill@c1c8a8c.",
+  "author": {
+    "name": "Cloudflare (upstream), packaged by Daniel Alisov"
+  },
+  "keywords": ["security", "audit", "pentest", "vulnerabilities"],
+  "homepage": "https://github.com/cloudflare/security-audit-skill",
+  "repository": "https://github.com/dalisoff2665/claude",
+  "license": "MIT"
+}
