@@ -69,6 +69,22 @@
 
 Обновить из upstream: заменить `plugins/security-audit/skills/security-audit/` свежей копией и поднять версию в обоих манифестах.
 
+## AI Research Skills (внешний marketplace)
+
+[orchestra-research/AI-research-SKILLs](https://github.com/orchestra-research/AI-research-SKILLs), MIT: 98 скиллов в 23 плагинах.
+Подключён в `.claude/settings.json` с фиксацией на тег `v1.7.2`. В этом репо включены:
+`agents`, `rag`, `prompt-engineering`, `observability`, `inference-serving`, `safety-alignment`.
+
+Глобально на своей машине:
+
+```
+/plugin marketplace add orchestra-research/AI-research-SKILLs@v1.7.2
+/plugin install agents@ai-research-skills
+```
+
+Остальные плагины (`fine-tuning`, `post-training`, `multimodal`, `evaluation`, `mlops`, `autoresearch` и т.д.) ставятся так же.
+Обновление: поднять `ref` в `.claude/settings.json` после просмотра диффа upstream.
+
 ## Выпуск новой версии
 
 ```bash
