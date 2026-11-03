@@ -42,6 +42,20 @@
         "video",
         "reels"
       ]
+    },
+    {
+      "name": "doubt-driven",
+      "source": "./plugins/doubt-driven",
+      "displayName": "Doubt-Driven Development",
+      "description": "Скилл Addy Osmani: каждое нетривиальное решение проходит состязательное ревью свежим агентом до того, как оно останется в коде. Ограничен тремя кругами, не срабатывает на механических правках.",
+      "version": "0.6.15",
+      "category": "development",
+      "keywords": [
+        "skills",
+        "review",
+        "engineering",
+        "quality"
+      ]
     }
   ]
 }

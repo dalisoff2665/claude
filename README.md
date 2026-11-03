@@ -8,6 +8,7 @@
 /plugin marketplace add dalisoff2665/claude
 /plugin install reels-factory@alisov-tools
 /plugin install earshot@alisov-tools
+/plugin install doubt-driven@alisov-tools
 ```
 
 ## Обновление
@@ -66,6 +67,12 @@
 
 После `/plugin install` один раз на машину: `/earshot:setup` (Python 3.10+, ffmpeg, ~1.1 ГБ моделей).
 Подробности и модель угроз — `plugins/earshot/README.md`.
+
+## doubt-driven
+
+Скилл Addy Osmani [doubt-driven-development](https://github.com/addyosmani/agent-skills/blob/main/skills/doubt-driven-development/SKILL.md):
+перед тем как нетривиальное решение останется в коде, его разбирает свежий агент с задачей
+«найди, что не так». Максимум три круга. Подробности — `plugins/doubt-driven/README.md`.
 
 ## Выпуск новой версии
 
