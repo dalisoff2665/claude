@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Запуск MCP-сервера earshot из venv, который ставит scripts/install.sh.
+# Локальный stdio: сетевого порта нет, снаружи до него не достучаться.
+set -euo pipefail
+
+ROOT="${EARSHOT_ROOT:-$HOME/.earshot}"
+PY="$ROOT/venv/bin/python"
+
+if [ ! -x "$PY" ]; then
+  echo "earshot не установлен на этой машине. Запусти /earshot:setup (один раз, ~5 минут)." >&2
+  exit 1
+fi
+
+export EARSHOT_HOME="${EARSHOT_HOME:-$ROOT}"
+export EARSHOT_THREADS="${EARSHOT_THREADS:-3}"
+
+# llm_critique загружает аудио в Gemini, и согласие на это агент может поставить сам.
+# Поэтому ключи по умолчанию убираем: звук не покидает машину.
+# Включить осознанно: EARSHOT_ALLOW_LLM=1 в окружении, из которого запускается Claude Code.
+if [ "${EARSHOT_ALLOW_LLM:-0}" != "1" ]; then
+  unset GEMINI_API_KEY GOOGLE_API_KEY
+fi
+
+# -I: текущая папка проекта (там скачанные файлы) не попадает в sys.path
+exec "$PY" -I -m earshot mcp

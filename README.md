@@ -7,6 +7,7 @@
 ```
 /plugin marketplace add dalisoff2665/claude
 /plugin install reels-factory@alisov-tools
+/plugin install earshot@alisov-tools
 ```
 
 ## Обновление
@@ -56,6 +57,15 @@
 - `SHOOT.md` — что и как снимать под каждый пресет
 - `MCP.md` — какие MCP нужны, какие нет, модель угроз
 - `templates/wrapper/` — Claude Code как сервис для n8n
+
+## earshot
+
+Слух для агента: звук в цифры и слова. Что звучит, где лучший момент в записи, попадает ли удар
+в склейку, как звук рилса выглядит рядом с профессиональными роликами. Банк из 252 SFX в коде
+и кит `launch` под монтаж на музыку. Работает локально, на CPU, через MCP.
+
+После `/plugin install` один раз на машину: `/earshot:setup` (Python 3.10+, ffmpeg, ~1.1 ГБ моделей).
+Подробности и модель угроз — `plugins/earshot/README.md`.
 
 ## Выпуск новой версии
 

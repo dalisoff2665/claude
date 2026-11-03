@@ -26,6 +26,22 @@
         "airtable",
         "cloudinary"
       ]
+    },
+    {
+      "name": "earshot",
+      "source": "./plugins/earshot",
+      "displayName": "earshot",
+      "description": "Слух для агента: описать звук словами, найти лучший момент в записи, проверить синхрон звука со склейками, оценить звук ролика против профессиональных. Банк из 252 SFX в коде и кит под монтаж на музыку. Локально, на CPU, MCP-сервер.",
+      "version": "0.4.0",
+      "category": "content",
+      "keywords": [
+        "audio",
+        "sfx",
+        "sound-design",
+        "mcp",
+        "video",
+        "reels"
+      ]
     }
   ]
 }
