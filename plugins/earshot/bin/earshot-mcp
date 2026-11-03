@@ -11,6 +11,9 @@ if [ ! -x "$PY" ]; then
   exit 1
 fi
 
+# Claude, запущенный из Dock, получает урезанный PATH без Homebrew — тогда ffmpeg не найдётся.
+export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
+
 export EARSHOT_HOME="${EARSHOT_HOME:-$ROOT}"
 export EARSHOT_THREADS="${EARSHOT_THREADS:-3}"
 
