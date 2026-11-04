@@ -57,6 +57,28 @@
 - `MCP.md` — какие MCP нужны, какие нет, модель угроз
 - `templates/wrapper/` — Claude Code как сервис для n8n
 
+## vibeagent-fx
+
+20 видеоэффектов для говорящей головы. Даёшь клип — получаешь MP4 1080×1350 со своим звуком. Рендер на твоём компьютере.
+
+```
+claude plugin marketplace add dalisoff2665/claude && claude plugin install vibeagent-fx@alisov-tools
+```
+
+Или внутри Claude Code:
+
+```
+/plugin marketplace add dalisoff2665/claude
+/plugin install vibeagent-fx@alisov-tools
+```
+
+Запуск из папки с клипом: `/grid-dive my-clip.mp4`, `/title-orbit my-clip.mp4 со словами «БОЛЬШАЯ НОВОСТЬ»`.
+Нужны ffmpeg, Node 18+ и Python 3. Первый запуск ставит движок в `~/.vibeagent-fx` (около 5 минут).
+
+Эффекты: grid-dive, title-orbit, magnifying-lens, portal, clone-room, infinite-zoom, cube-spin, liquid-glass, screen-in-screen, frame-break, tile-tunnel, depth-ui, vertigo, phone-fan, shatter, spotlight, pull-back-reveal, ribbon-wrap, zoom-through, head-pop-out.
+
+Гайд с превью всех эффектов: https://learn.vibeagent.kz/r/effekt
+
 ## Выпуск новой версии
 
 ```bash
