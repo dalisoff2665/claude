@@ -26,6 +26,22 @@
         "airtable",
         "cloudinary"
       ]
+    },
+    {
+      "name": "vibeagent-fx",
+      "source": "./plugins/vibeagent-fx",
+      "displayName": "VibeAgent FX",
+      "description": "20 видеоэффектов для говорящей головы: /grid-dive, /portal, /clone-room, /shatter и ещё 16. Даёшь клип — получаешь MP4 со своим звуком. Рендер локально.",
+      "version": "1.0.0",
+      "category": "content",
+      "keywords": [
+        "video",
+        "effects",
+        "reels",
+        "talking-head",
+        "ffmpeg",
+        "playwright"
+      ]
     }
   ]
 }

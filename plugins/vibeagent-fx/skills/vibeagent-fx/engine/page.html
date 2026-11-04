@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<link rel="stylesheet" href="/node_modules/@fontsource/onest/400.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/onest/500.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/onest/700.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/onest/800.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/jura/500.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/jura/700.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/prosto-one/400.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/jetbrains-mono/500.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/jetbrains-mono/700.css">
+<style>
+  html,body{margin:0;padding:0;background:#000;overflow:hidden}
+  #stage{position:relative;width:1080px;height:1350px;overflow:hidden;background:#000;font-family:Onest,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+  #stage *{box-sizing:border-box}
+</style></head>
+<body><div id="stage"></div>
+<script type="module">
+  import { makeStage } from '/engine/stage.js';
+  let S, mod, opts;
+  window.boot = async (work) => {
+    const meta = await (await fetch(`/${work}/meta.json`)).json();
+    S = makeStage(meta, work); window.S = S;
+    await Promise.all(['400 40px Onest','700 40px Onest','800 40px Onest','700 40px Jura','40px "Prosto One"','500 40px "JetBrains Mono"','700 40px "JetBrains Mono"']
+      .map(f => document.fonts.load(f, 'АБВabc01')));
+    return { n: meta.n, fps: meta.fps };
+  };
+  window.runSeg = async (name, o = {}, from = 0, to = 0) => {
+    S.clear(); opts = { ...o, from, to };
+    mod = (await import(`/engine/effects/${name}.js?v=${Date.now()}`)).default;
+    if (mod.init) await mod.init(S, opts);
+    return true;
+  };
+  window.drawFrame = async (k, p, f) => { await mod.frame(S, k, p, f, opts); return true; };
+</script></body></html>
