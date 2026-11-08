@@ -1,9 +1,21 @@
-node_modules/
-__pycache__/
-*.pyc
-.DS_Store
+# секреты — никогда в git
 .env
 *.env
-out/
-raw/
-jobs/
+!.env.example
+
+# рабочие каталоги reels-factory (якорим к корню, чтобы не задеть reels/out/)
+/out/
+/raw/
+/jobs/
+
+# промежуточные кадры рендера
+build/
+
+# python
+__pycache__/
+*.pyc
+
+# node
+node_modules/
+
+.DS_Store

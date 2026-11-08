@@ -1,0 +1,56 @@
+{
+  "id": "mcp-connectors",
+  "preset": "yapping",
+  "title": "5 MCP-коннекторов, которыми я реально пользуюсь",
+  "cta_keyword": "MCP",
+  "reference": "https://www.instagram.com/reel/Dc9ozo1BKnd/",
+
+  "shots": [
+    {
+      "type": "hook",
+      "headline": "5 MCP\nкаждый\nдень",
+      "voice": "Пять MCP, которыми я пользуюсь каждый день"
+    },
+    {
+      "type": "step",
+      "logo": "airtable",
+      "headline": "Airtable",
+      "note": "Клод пишет прямо в базу",
+      "voice": "Airtable — Клод пишет прямо в базу"
+    },
+    {
+      "type": "step",
+      "logo": "playwright",
+      "headline": "Playwright",
+      "note": "браузер кликает сам",
+      "voice": "Playwright — браузер кликает сам"
+    },
+    {
+      "type": "step",
+      "logo": "cloudinary",
+      "headline": "Cloudinary",
+      "note": "медиа одной командой",
+      "voice": "Cloudinary — медиа улетает одной командой"
+    },
+    {
+      "type": "step",
+      "logo": "gemini",
+      "headline": "Gemini",
+      "note": "картинки и видео в чате",
+      "voice": "Gemini — картинки и видео в чате"
+    },
+    {
+      "type": "step",
+      "logo": "kie",
+      "headline": "kie.ai",
+      "note": "Veo, Seedance, Kling",
+      "voice": "kie.ai — Veo, Seedance, Kling в одном окне"
+    },
+    {
+      "type": "cta",
+      "headline": "Напиши\nMCP",
+      "note": "пришлю список и гайд",
+      "voice": "Напиши MCP — пришлю список и гайд"
+    }
+  ]
+}
