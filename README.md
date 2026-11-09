@@ -79,6 +79,20 @@ claude plugin marketplace add dalisoff2665/claude && claude plugin install vibea
 
 Гайд с превью всех эффектов: https://learn.vibeagent.kz/r/effekt
 
+## yt-usa
+
+Американский YouTube с ИИ: 12 скиллов от ниши до монетизации. Claude находит видео,
+которые выстрелили ×10–×100, пишет сценарий на английском, озвучивает, генерирует фото и видео,
+монтирует, делает превью и шортс, готовит публикацию и разбирает удержание. Публикуешь ты.
+
+```
+/plugin install yt-usa@alisov-tools
+```
+
+Нужен vidIQ в Claude (Connectors или `claude mcp add --transport http vidiq https://mcp.vidiq.com/mcp`),
+для монтажа — ffmpeg. Старт: `/yt-usa:setup`, потом `/yt-usa:start`.
+Подробно — `plugins/yt-usa/README.md`, что ставить и сколько стоит — `plugins/yt-usa/MCP.md`.
+
 ## Выпуск новой версии
 
 ```bash

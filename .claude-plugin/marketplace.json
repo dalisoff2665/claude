@@ -42,6 +42,24 @@
         "ffmpeg",
         "playwright"
       ]
+    },
+    {
+      "name": "yt-usa",
+      "source": "./plugins/yt-usa",
+      "displayName": "YouTube USA с ИИ",
+      "description": "Американский YouTube с ИИ: 12 скиллов — ниша и RPM по США, видео-выбросы ×10–×100, оформление канала, сценарий на английском, голос, генерация фото и видео, монтаж ffmpeg, превью, шортс, публикация, удержание, монетизация и налог США. Через vidIQ MCP.",
+      "version": "1.0.0",
+      "category": "content",
+      "keywords": [
+        "youtube",
+        "usa",
+        "vidiq",
+        "faceless",
+        "monetization",
+        "thumbnails",
+        "shorts",
+        "ai-video"
+      ]
     }
   ]
 }
