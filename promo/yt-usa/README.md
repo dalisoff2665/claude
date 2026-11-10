@@ -1,16 +1,19 @@
-# Рилс «Запускаю американский YouTube — всё делает Claude»
+# Рилс «Запустил американский YouTube — всё делает Claude»
 
 Формат как у saint4ai («11 бесплатных навыков Claude для YouTube»): голос за кадром + моушн-графика,
-прогрессивные субтитры, кодовое слово в конце. 52.8 с, 1080×1920, −14 LUFS.
+прогрессивные субтитры, кодовое слово в конце. В кадре — реальный канал Brain Maxed:
+обложки, шортс и куски роликов из Cloudinary. 57 с, 1080×1920, −14 LUFS.
 
 | Файл | Что это |
 |---|---|
 | `script.json` | сценарий по сценам; `видно\|произносится` для слов, которые TTS читает иначе |
-| `tts.py` | черновая озвучка Cartesia с таймкодами слов → `build/voice.wav`, `build/timeline.json` |
+| `fetch_assets.sh` | скачать обложки и куски роликов канала из Cloudinary в `assets/` (не в git) |
+| `tts_edge.py` | бесплатная озвучка голосом Microsoft (edge-tts) с таймкодами слов → `build/voice.wav`, `build/timeline.json` |
+| `tts.py` | то же через Cartesia (нужен баланс) |
 | `retime.py` | **переозвучка своим голосом**: запись → faster-whisper → новый `timeline.json` |
 | `reel.html` | 12 сцен в дизайн-системе VibeAgent, анимация по таймкодам слов |
 | `render.cjs` | headless Chromium снимает кадры → ffmpeg |
-| `mix.py` | голос + тихий пэд + «вжухи» на сменах сцен → `out/reel.mp4` и `out/reel_voice_only.mp4` |
+| `mix.py` | голос + тихий пэд + звуки из `build/sfx.json` (вжухи, щелчки, удары) → `out/reel.mp4` и `out/reel_voice_only.mp4` |
 | `FUNNEL.md` | подпись, закреп, ответы, директ, дожимы |
 | `guide/index.html` | гайд, который уходит в директ по слову ЮТУБ |
 
@@ -26,7 +29,10 @@
 ## Пересобрать с нуля
 
 ```bash
-python3 tts.py script.json --out build/ --tempo 1.05
+./fetch_assets.sh
+for c in ai-01 doom-01 sugar-01 kids-04 donut doom-long; do mkdir -p assets/frames/$c && ffmpeg -v error -y -i assets/clips/$c.mp4 -vf fps=30 -q:v 4 assets/frames/$c/%04d.jpg; done
+ffmpeg -y -i assets/thumbs/doomscrolling_thumb-B.jpg -vf "crop=340:340:690:110,scale=300:300" assets/avatar.jpg
+python3 tts_edge.py script.json --rate +10%      # затем ускорение atempo 1.25, см. историю
 node render.cjs --stills 4.9,18.6,38.9   # проверочные кадры в build/
 node render.cjs && python3 mix.py
 ```

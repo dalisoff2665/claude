@@ -6,7 +6,7 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const FPS = 30, TAIL = 1.4;
+const FPS = 30, TAIL = 1.6;
 const dir = __dirname;
 const tl = JSON.parse(fs.readFileSync(path.join(dir, 'build/timeline.json'), 'utf8'));
 
@@ -18,6 +18,7 @@ const tl = JSON.parse(fs.readFileSync(path.join(dir, 'build/timeline.json'), 'ut
   await page.goto('file://' + path.join(dir, 'reel.html'));
   await page.evaluate(() => document.fonts.ready);
   await page.evaluate(t => window.setup(t), tl);
+  fs.writeFileSync(path.join(dir, 'build/sfx.json'), JSON.stringify(await page.evaluate(() => window.SFX), null, 1));
 
   if (stillsArg > 0) {
     for (const s of process.argv[stillsArg + 1].split(',')) {

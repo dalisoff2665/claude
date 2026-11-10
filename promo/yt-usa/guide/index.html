@@ -73,7 +73,15 @@ td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:now
 .work:hover{border-color:var(--accent)}
 .work p{font-size:15px;color:var(--muted)}
 .work .go{font-family:var(--mono);font-size:13px;color:var(--accent-ink)}
-.yt-slot{border:1.5px dashed var(--line);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center;color:var(--muted);font-size:15px}
+.channel{display:grid;gap:14px;padding:18px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.channel-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.channel-head h3{font-size:24px}
+.channel-head span{font-size:14px;color:var(--muted)}
+.vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.vid{display:grid;gap:6px;text-decoration:none;color:var(--fg);font-size:14px;line-height:1.35}
+.vid img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block}
+.vid:hover span{color:var(--accent-ink)}
+@media (max-width:640px){.vids{grid-template-columns:minmax(0,1fr)}}
 .safe{display:grid;gap:10px;padding:20px;border-radius:18px;background:var(--accent-soft)}
 .safe li{margin-bottom:6px}
 .safe ul{margin:0;padding-left:20px}
@@ -102,7 +110,7 @@ footer{padding-top:40px;font-size:13px;color:var(--muted)}
       </div>
       <div>
         <div class="reel"><video src="reel.mp4" controls playsinline muted preload="metadata" poster=""></video></div>
-        <p class="reel-cap">Этот рилс собрал Claude Code: озвучка, графика, монтаж и субтитры.</p>
+        <p class="reel-cap">Этот рилс собрал Claude Code: озвучка, графика, монтаж и субтитры. В кадре — мой канал Brain Maxed.</p>
       </div>
     </div>
   </header>
@@ -195,7 +203,14 @@ footer{padding-top:40px;font-size:13px;color:var(--muted)}
       <a class="work" href="https://www.instagram.com/reel/De9AnpjKw6B/" target="_blank" rel="noopener"><h3>Мультфильм-история</h3><p>Персонажи, сцены и голос с ИИ — формат для канала историй на английском.</p><span class="go">смотреть →</span></a>
       <a class="work" href="https://www.instagram.com/reel/De8e3Z-hRwR/" target="_blank" rel="noopener"><h3>Сериал «Pumpkin Knight»</h3><p>Черновая сцена в Blender, затем Seedance превратил её в кино по моим фото.</p><span class="go">смотреть →</span></a>
     </div>
-    <div class="yt-slot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg>Канал для США запускаю сейчас — ссылка появится здесь.</div>
+    <div class="channel">
+      <div class="channel-head"><h3>Brain Maxed</h3><span>мой канал для США · английский · без лица · сценарии, голос, обложки и монтаж — Claude</span></div>
+      <div class="vids">
+        <a class="vid" href="https://www.youtube.com/watch?v=xbd0e2iGasA" target="_blank" rel="noopener"><img src="bm-ai.jpg" alt="Превью ролика Nobody Warned You What AI Does to Your Brain"><span>Nobody Warned You What AI Does to Your Brain</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=IXtLF0ioEeQ" target="_blank" rel="noopener"><img src="bm-cartoon.jpg" alt="Превью ролика What Happens To Your Child's Brain After The Cartoon Ends"><span>What Happens To Your Child’s Brain After The Cartoon Ends?</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=R2YPhtg7roU" target="_blank" rel="noopener"><img src="bm-trailer.jpg" alt="Трейлер канала Brain Maxed"><span>Brain Maxed: The Brain Stuff Nobody Tells You</span></a>
+      </div>
+    </div>
   </section>
 
   <section>
