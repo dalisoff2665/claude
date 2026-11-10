@@ -1,4 +1,7 @@
 build/
+build_alt/
+cover/*.png
+!cover/reel-cover.png
 out/
 guide/reel.mp4
 __pycache__/
