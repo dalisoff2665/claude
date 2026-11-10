@@ -1,0 +1,249 @@
+<title>YouTube USA с Claude</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One&family=Jura:wght@500;700&family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: одна колонка-гайд 760px, шаги как нумерованный маршрут, справочные таблицы в своих скролл-контейнерах */
+:root{
+  --bg:#F6F4FB; --surface:#FFFFFF; --surface2:#EEEAF7; --fg:#15121D; --muted:#686277; --line:#E2DCEE;
+  --accent:#6200FF; --accent-soft:#EDE4FF; --accent-ink:#4A00C4; --code:#1A1624; --code-fg:#EDE8F7; --chip:#C9A7FF;
+  --display:'Prosto One','Onest',system-ui,sans-serif; --head:'Jura','Onest',system-ui,sans-serif;
+  --body:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E0C14; --surface:#16131F; --surface2:#1E1A2A; --fg:#F2EEFA; --muted:#9C95AD; --line:#2A2538;
+  --accent:#C9A7FF; --accent-soft:#2A2140; --accent-ink:#D9C2FF; --code:#0A0910; --code-fg:#EDE8F7; --chip:#C9A7FF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E0C14; --surface:#16131F; --surface2:#1E1A2A; --fg:#F2EEFA; --muted:#9C95AD; --line:#2A2538;
+  --accent:#C9A7FF; --accent-soft:#2A2140; --accent-ink:#D9C2FF; --code:#0A0910; --code-fg:#EDE8F7; --chip:#C9A7FF; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,8vw,68px);line-height:1;letter-spacing:-.01em}
+h1 span{color:var(--accent)}
+h2{font-family:var(--head);font-weight:700;font-size:clamp(26px,4.4vw,34px);line-height:1.15}
+h3{font-family:var(--head);font-weight:700;font-size:21px;line-height:1.25}
+p{margin:0}
+a{color:var(--accent-ink);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.eyebrow b{color:var(--accent);font-weight:700}
+.lead{font-size:20px;color:var(--muted);max-width:60ch}
+section{display:grid;gap:18px;padding-top:56px}
+section>*,.hero>*,.hero-row>*,.steps>li,.three>*,.skills>*,.works>*{min-width:0}
+section,.hero,.stack,.st,.box,.work,.cta,.safe,.steps{grid-template-columns:minmax(0,1fr)}
+.hero{display:grid;gap:20px}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:28px;align-items:center}
+.reel{width:220px;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:var(--code);max-width:100%}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.reel-cap{font-size:13px;color:var(--muted);margin-top:8px;max-width:220px}
+.cmd{display:flex;align-items:center;gap:10px;background:var(--code);color:var(--code-fg);border-radius:14px;padding:12px 12px 12px 16px;font-family:var(--mono);font-size:14px}
+.cmd code{flex:1;min-width:0;overflow-x:auto;white-space:nowrap}
+.cmd button{flex:none;font-family:var(--mono);font-size:12px;border:1px solid #3A3450;background:transparent;color:var(--code-fg);border-radius:8px;padding:6px 10px;cursor:pointer}
+.cmd button:hover{border-color:var(--chip)}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:10px;align-content:start}
+.box .ic{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center}
+.box p{color:var(--muted);font-size:15px}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:8px;background:var(--surface2);color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sk{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.sk .n{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:14px;padding-top:2px;font-variant-numeric:tabular-nums}
+.sk b{font-family:var(--mono);font-size:14px}
+.sk p{font-size:15px;color:var(--muted)}
+.steps{counter-reset:s;display:grid;gap:12px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:14px}
+:root[data-theme="dark"] .steps li::before{color:#0E0C14}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .steps li::before{color:#0E0C14}}
+.steps .st{display:grid;gap:8px;min-width:0}
+.see{font-size:14px;color:var(--muted)}
+.see::before{content:"Увидишь: ";font-weight:700;color:var(--fg)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tr:last-child td{border-bottom:0}
+td code{font-family:var(--mono);font-size:13px;color:var(--accent-ink)}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{font-size:15px;color:var(--muted)}
+.works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.work{display:grid;gap:8px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--fg)}
+.work:hover{border-color:var(--accent)}
+.work p{font-size:15px;color:var(--muted)}
+.work .go{font-family:var(--mono);font-size:13px;color:var(--accent-ink)}
+.channel{display:grid;gap:14px;padding:18px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.channel-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.channel-head h3{font-size:24px}
+.channel-head span{font-size:14px;color:var(--muted)}
+.vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.vid{display:grid;gap:6px;text-decoration:none;color:var(--fg);font-size:14px;line-height:1.35}
+.vid img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block}
+.vid:hover span{color:var(--accent-ink)}
+@media (max-width:640px){.vids{grid-template-columns:minmax(0,1fr)}}
+.safe{display:grid;gap:10px;padding:20px;border-radius:18px;background:var(--accent-soft)}
+.safe li{margin-bottom:6px}
+.safe ul{margin:0;padding-left:20px}
+.cta{display:grid;gap:14px;padding:26px;border-radius:22px;background:var(--code);color:var(--code-fg)}
+.cta h2{color:#fff}
+.cta p{color:#BDB5CF}
+.cta .big{font-family:var(--display);font-size:42px;color:var(--chip);line-height:1}
+.contact{font-family:var(--mono);font-size:15px;color:#fff;user-select:all}
+footer{padding-top:40px;font-size:13px;color:var(--muted)}
+@media (max-width:640px){
+  .hero-row{grid-template-columns:minmax(0,1fr)}
+  .reel{width:min(260px,100%)}
+  .three,.skills,.works{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Гайд · <b>Американский YouTube</b> · Claude</div>
+    <div class="hero-row">
+      <div class="stack" style="display:grid;gap:18px;min-width:0">
+        <h1>YouTube <span>USA</span> с Claude</h1>
+        <p class="lead">Что я поставил в Claude, чтобы вести англоязычный канал без съёмки на английском и без монтажа. Плагин из 12 скиллов, vidIQ и нейросети, установка по шагам.</p>
+        <div class="cmd"><code>/plugin install yt-usa@alisov-tools</code><button type="button" data-copy="/plugin marketplace add dalisoff2665/claude&#10;/plugin install yt-usa@alisov-tools">копировать</button></div>
+      </div>
+      <div>
+        <div class="reel"><video src="reel.mp4" controls playsinline muted preload="metadata" poster=""></video></div>
+        <p class="reel-cap">Этот рилс собрал Claude Code: озвучка, графика, монтаж и субтитры. В кадре — мой канал Brain Maxed.</p>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="eyebrow">Что понадобилось</div>
+    <h2>Три вещи</h2>
+    <div class="three">
+      <div class="box">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:var(--accent)"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg></div>
+        <h3>Claude Code</h3>
+        <p>Работает на твоём компьютере: пишет, генерирует, монтирует. Нужна подписка Claude Pro или Max.</p>
+      </div>
+      <div class="box">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg></div>
+        <h3>vidIQ в Claude</h3>
+        <p>71 инструмент прямо в чате: темы, выбросы, превью, видео, голос, аналитика канала.</p>
+      </div>
+      <div class="box">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+        <h3>Нейросети</h3>
+        <p>Nano Banana и Seedream — картинки, Seedance и Veo — сцены, мой клон голоса в ElevenLabs и HeyGen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Плагин yt-usa</div>
+    <h2>12 скиллов — от ниши до денег</h2>
+    <p class="note">Скилл — рецепт работы для Claude. Ставится одной командой, вызывается сам, когда нужен, или через команду <code>/yt-usa:…</code></p>
+    <div class="skills">
+      <div class="sk"><div class="n">01</div><div><b>niche</b><p>ниша, спрос по США, оценка дохода до съёмки</p></div></div>
+      <div class="sk"><div class="n">02</div><div><b>outliers</b><p>видео ×10–×100 от среднего по каналу и их упаковка</p></div></div>
+      <div class="sk"><div class="n">03</div><div><b>brand</b><p>имя, аватар, баннер с безопасной зоной, описание</p></div></div>
+      <div class="sk"><div class="n">04</div><div><b>script</b><p>сценарий на английском и 5 хуков с оценкой</p></div></div>
+      <div class="sk"><div class="n">05</div><div><b>voice</b><p>свой голос, клон или перевод своих видео</p></div></div>
+      <div class="sk"><div class="n">06</div><div><b>visuals</b><p>сток, генерация фото и видео-сцен, графика</p></div></div>
+      <div class="sk"><div class="n">07</div><div><b>edit</b><p>монтаж 16:9 через ffmpeg, музыка, субтитры</p></div></div>
+      <div class="sk"><div class="n">08</div><div><b>thumbnail</b><p>превью: генерация, оценка CTR, A/B-тест</p></div></div>
+      <div class="sk"><div class="n">09</div><div><b>shorts</b><p>шортс из длинного видео и с нуля</p></div></div>
+      <div class="sk"><div class="n">10</div><div><b>publish</b><p>заголовок, описание, главы, раскрытие ИИ</p></div></div>
+      <div class="sk"><div class="n">11</div><div><b>retention</b><p>секунда, где ушли зрители, и одна правка</p></div></div>
+      <div class="sk"><div class="n">12</div><div><b>money</b><p>YPP, AdSense, налог США и W-8BEN</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Установка</div>
+    <h2>Поставить за вечер</h2>
+    <ol class="steps">
+      <li><div class="st"><h3>Поставь Claude Code</h3><div class="cmd"><code>npm install -g @anthropic-ai/claude-code</code><button type="button" data-copy="npm install -g @anthropic-ai/claude-code">копировать</button></div><p class="see">команда <code>claude</code> в терминале открывает чат и просит войти в аккаунт Claude.</p></div></li>
+      <li><div class="st"><h3>Добавь мой маркетплейс</h3><div class="cmd"><code>/plugin marketplace add dalisoff2665/claude</code><button type="button" data-copy="/plugin marketplace add dalisoff2665/claude">копировать</button></div><p class="see">маркетплейс alisov-tools в списке.</p></div></li>
+      <li><div class="st"><h3>Установи плагин</h3><div class="cmd"><code>/plugin install yt-usa@alisov-tools</code><button type="button" data-copy="/plugin install yt-usa@alisov-tools">копировать</button></div><p class="see">команды <code>/yt-usa:…</code> появились в подсказках после <code>/</code>.</p></div></li>
+      <li><div class="st"><h3>Подключи vidIQ</h3><div class="cmd"><code>claude mcp add --transport http vidiq https://mcp.vidiq.com/mcp</code><button type="button" data-copy="claude mcp add --transport http vidiq https://mcp.vidiq.com/mcp">копировать</button></div><p>Потом в Claude Code набери <code>/mcp</code> → vidiq → Authenticate и войди в vidIQ в браузере.</p><p class="see">vidiq со статусом connected.</p></div></li>
+      <li><div class="st"><h3>Подключи свой YouTube-канал</h3><p>Напиши в Claude: «подключи мой YouTube-канал к vidIQ». Он даст ссылку на вход через Google.</p><p class="see">название канала и число подписчиков в ответе Claude.</p></div></li>
+      <li><div class="st"><h3>Поставь инструменты монтажа</h3><div class="cmd"><code>brew install ffmpeg &amp;&amp; pip install faster-whisper</code><button type="button" data-copy="brew install ffmpeg && pip install faster-whisper">копировать</button></div><p class="note">Windows: <code>winget install Gyan.FFmpeg</code>, затем <code>pip install faster-whisper</code>.</p></div></li>
+      <li><div class="st"><h3>Проверь всё одной командой</h3><div class="cmd"><code>/yt-usa:setup</code><button type="button" data-copy="/yt-usa:setup">копировать</button></div><p class="see">таблица «есть / нет / что сделать» и остаток кредитов vidIQ.</p></div></li>
+      <li><div class="st"><h3>Запусти канал</h3><div class="cmd"><code>/yt-usa:start</code><button type="button" data-copy="/yt-usa:start">копировать</button></div><p class="see">первый вопрос про нишу. Дальше Claude ведёт по шагам и спрашивает «да» перед каждой оплатой.</p></div></li>
+    </ol>
+    <p class="note">Нет Claude Code? В обычном чате Claude: Settings → Connectors → vidIQ, и готовые промпты из файла <a href="https://github.com/dalisoff2665/claude/blob/main/plugins/yt-usa/PROMPTS.md" target="_blank" rel="noopener">PROMPTS.md</a>.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">vidIQ</div>
+    <h2>Как vidIQ генерирует фото и видео</h2>
+    <p class="note">Всё оплачивается кредитами. Бесплатно — 150 в месяц: этого хватит, чтобы попробовать, но не на один ролик целиком. Для канала нужен платный план: <a href="https://app.vidiq.com/upgrade/mcp/claude" target="_blank" rel="noopener">app.vidiq.com/upgrade/mcp/claude</a>.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Что</th><th>Инструмент</th><th>Кредиты</th></tr></thead>
+      <tbody>
+        <tr><td>Превью 16:9 и для шортс</td><td><code>generate_thumbnail</code></td><td class="num">22</td></tr>
+        <tr><td>Доработка превью словами</td><td><code>refine_thumbnail</code></td><td class="num">22</td></tr>
+        <tr><td>Видео-сцена: Seedance 2, MiniMax H3, Wan 3, Gemini Omni</td><td><code>generate_video</code></td><td class="num">сек × ставка × 20</td></tr>
+        <tr><td>Стоковый B-roll</td><td><code>generate_broll</code></td><td class="num">1</td></tr>
+        <tr><td>Моушн-графика: цифры, сравнения</td><td><code>motion_graphics</code></td><td class="num">1 за 4 с</td></tr>
+        <tr><td>Озвучка, в том числе твоим клоном</td><td><code>voiceover_generate</code></td><td class="num">28 / 1000 знаков</td></tr>
+        <tr><td>Музыка без авторских прав</td><td><code>generate_music</code></td><td class="num">25</td></tr>
+        <tr><td>Шортс из длинного видео</td><td><code>generate_clips</code></td><td class="num">9 / мин</td></tr>
+        <tr><td>Выбросы, ключевые слова, аналитика</td><td><code>outliers</code>, <code>keyword_research</code>, <code>channel_analytics</code></td><td class="num">5</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">10-минутное видео целиком на vidIQ — около 370 кредитов. Поэтому в плагине монтаж идёт локально через ffmpeg (бесплатно), а голос — через мой клон. vidIQ остаётся там, где он сильнее всего: темы, превью, заголовки, аналитика.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">Что мы уже делали с Claude</div>
+    <h2>Мои ролики</h2>
+    <div class="works">
+      <a class="work" href="https://www.instagram.com/reel/DfPG8hkh7GY/" target="_blank" rel="noopener"><h3>Рилс, который я не снимал</h3><p>Говорит мой аватар HeyGen, монтаж собрал Claude Code: склейки по словам, графика в Remotion.</p><span class="go">смотреть →</span></a>
+      <a class="work" href="https://www.instagram.com/reel/De8xvEGKH_6/" target="_blank" rel="noopener"><h3>Видео без монтажа</h3><p>Анимация как сайт, кадры через Playwright, склейка ffmpeg, мой голос-клон ElevenLabs.</p><span class="go">смотреть →</span></a>
+      <a class="work" href="https://www.instagram.com/reel/De9AnpjKw6B/" target="_blank" rel="noopener"><h3>Мультфильм-история</h3><p>Персонажи, сцены и голос с ИИ — формат для канала историй на английском.</p><span class="go">смотреть →</span></a>
+      <a class="work" href="https://www.instagram.com/reel/De8e3Z-hRwR/" target="_blank" rel="noopener"><h3>Сериал «Pumpkin Knight»</h3><p>Черновая сцена в Blender, затем Seedance превратил её в кино по моим фото.</p><span class="go">смотреть →</span></a>
+    </div>
+    <div class="channel">
+      <div class="channel-head"><h3>Brain Maxed</h3><span>мой канал для США · английский · без лица · сценарии, голос, обложки и монтаж — Claude</span></div>
+      <div class="vids">
+        <a class="vid" href="https://www.youtube.com/watch?v=xbd0e2iGasA" target="_blank" rel="noopener"><img src="bm-ai.jpg" alt="Превью ролика Nobody Warned You What AI Does to Your Brain"><span>Nobody Warned You What AI Does to Your Brain</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=IXtLF0ioEeQ" target="_blank" rel="noopener"><img src="bm-cartoon.jpg" alt="Превью ролика What Happens To Your Child's Brain After The Cartoon Ends"><span>What Happens To Your Child’s Brain After The Cartoon Ends?</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=R2YPhtg7roU" target="_blank" rel="noopener"><img src="bm-trailer.jpg" alt="Трейлер канала Brain Maxed"><span>Brain Maxed: The Brain Stuff Nobody Tells You</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Безопасность</div>
+    <h2>Публикуешь ты</h2>
+    <div class="safe"><ul>
+      <li>Claude не выкладывает видео и не меняет заголовки без твоего «да» с точными значениями.</li>
+      <li>Перед каждой платной генерацией он называет цену в кредитах.</li>
+      <li>Реалистичный ИИ-контент отмечается при загрузке — так требует YouTube.</li>
+      <li>Ключи нейросетей хранятся в .env на твоём компьютере, не в чате.</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <div class="eyebrow" style="color:#BDB5CF">Дальше — со мной</div>
+      <h2>Хочешь пройти это по шагам?</h2>
+      <p>На платформе VibeAgent — мини-курс «11 ИИ-решений для бизнеса и блога»: контент-завод, монтаж с Claude, сайты, агенты. Напиши в директ слово</p>
+      <div class="big">11</div>
+      <p>Instagram: <span class="contact">@alisovdaniel</span> · WhatsApp: <span class="contact">+7 775 087 9355</span></p>
+    </div>
+  </section>
+
+  <footer>Даниэль Алисов · vibeagent.kz · Плагин открытый: <a href="https://github.com/dalisoff2665/claude/tree/main/plugins/yt-usa" target="_blank" rel="noopener">github.com/dalisoff2665/claude</a></footer>
+</div>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const txt=b.getAttribute('data-copy');
+    const done=()=>{const o=b.textContent;b.textContent='скопировано';setTimeout(()=>b.textContent=o,1400);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>sel(b));}else sel(b);
+  });
+});
+function sel(b){const c=b.parentElement.querySelector('code');const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);}
+</script>

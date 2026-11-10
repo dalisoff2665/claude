@@ -1,0 +1,15 @@
+{
+  "size": [1920, 1080],
+  "fps": 30,
+  "voice": "voice.mp3",
+  "music": { "src": "music.mp3", "volume": 0.18, "duck": true },
+  "subtitles": { "src": "subs.srt", "burn": false },
+  "out": "out/video.mp4",
+  "shots": [
+    { "src": "shots/01-hook.mp4",   "start": 0.0,  "end": 6.4,  "trim_in": 0.5, "note": "hook: generated scene" },
+    { "src": "shots/02-chart.mp4",  "start": 6.4,  "end": 12.0, "note": "motion graphics ×40" },
+    { "src": "shots/03-city.mp4",   "start": 12.0, "end": 18.5, "trim_in": 2.0, "note": "stock b-roll, credit in description" },
+    { "src": "shots/04-screen.png", "start": 18.5, "end": 25.0, "motion": "in", "note": "screenshot, slow push-in" },
+    { "src": "shots/05-photo.jpg",  "start": 25.0, "end": 31.2, "motion": "left", "zoom": 0.1 }
+  ]
+}
