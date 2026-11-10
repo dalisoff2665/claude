@@ -87,6 +87,7 @@ def main():
     ap.add_argument("--voice", default="ru-RU-DmitryNeural")
     ap.add_argument("--rate", default="+8%")
     ap.add_argument("--out", type=Path, default=D / "build")
+    ap.add_argument("--tempo", type=float, default=1.0, help="ускорить итог через atempo, например 1.25")
     args = ap.parse_args()
     cfg = json.loads(args.script.read_text(encoding="utf-8"))
     args.out.mkdir(parents=True, exist_ok=True)
@@ -113,6 +114,16 @@ def main():
         w.setsampwidth(2)
         w.setframerate(RATE)
         w.writeframes(bytes(audio))
+    if args.tempo != 1.0:  # ускорение без смены тембра, таймкоды делятся на тот же коэффициент
+        k = args.tempo
+        tmp = args.out / "voice_tempo.wav"
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(args.out / "voice.wav"), "-af", f"atempo={k}", str(tmp)], check=True)
+        tmp.replace(args.out / "voice.wav")
+        t /= k
+        for s in timeline:
+            s["start"], s["end"] = round(s["start"] / k, 3), round(s["end"] / k, 3)
+            for w in s["words"]:
+                w["start"], w["end"] = round(w["start"] / k, 3), round(w["end"] / k, 3)
     (args.out / "timeline.json").write_text(json.dumps({"duration": round(t, 3), "sentences": timeline},
                                                        ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✓ build/voice.wav  {t:.2f} с · timeline.json")

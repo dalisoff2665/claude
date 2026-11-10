@@ -59,6 +59,33 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 .cbadge{display:inline-flex;align-items:center;gap:20px;margin-top:30px;font-family:var(--head);font-weight:700;font-size:64px;padding:22px 44px 22px 28px;border-radius:999px;background:#fff;color:#0B0A10;box-shadow:0 0 0 10px rgba(201,167,255,.25)}
 .cbadge svg{width:70px;height:70px}
 
+/* 1 trend */
+.bgvid{position:absolute;inset:0;overflow:hidden}
+.bgvid .seq{position:absolute;inset:-6%;width:112%;height:112%;opacity:.42}
+.bgshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,16,.88) 0%,rgba(11,10,16,.68) 35%,rgba(11,10,16,.72) 62%,rgba(11,10,16,.95) 100%)}
+.tr-small{font-family:var(--head);font-weight:700;font-size:58px;color:#E9E5F1;margin-top:40px}
+.tr-big{font-family:var(--display);font-size:86px;line-height:1;margin-top:18px;letter-spacing:-.01em}
+.tr-yt{display:flex;align-items:center;gap:26px;font-family:var(--yt);font-size:206px;line-height:.95;color:#fff;margin-top:8px;letter-spacing:.01em}
+.ytplay{width:170px;height:120px;border-radius:38px;background:#FF0033;display:grid;place-items:center;flex:none;box-shadow:0 20px 60px rgba(255,0,51,.35)}
+.tr-ai{font-family:var(--head);font-weight:700;font-size:54px;color:var(--accent);margin-top:22px}
+.floaters{position:absolute;left:-40px;right:-40px;top:760px;height:200px}
+.fl{position:absolute;font-family:var(--mono);font-size:28px;padding:12px 20px;border-radius:999px;background:rgba(21,19,28,.86);border:1px solid var(--line);color:#D9D4E4;white-space:nowrap}
+/* 2 try */
+.try-wrap{position:absolute;left:0;right:0;top:170px;text-align:center}
+.try-t{font-family:var(--display);font-size:150px;line-height:1}
+.try-t2{font-family:var(--display);font-size:98px;line-height:1;color:var(--accent);margin-top:16px}
+.ring{position:absolute;left:50%;top:330px;width:200px;height:200px;margin:-100px 0 0 -100px;border-radius:50%;border:6px solid var(--accent);opacity:0}
+.ring.r2{border-color:#fff;border-width:3px}
+/* 3 build */
+.wall{position:relative;height:540px;margin-top:6px}
+.wt{position:absolute;width:300px;height:169px;border-radius:16px;background-size:cover;background-position:center;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.wt .seq{position:absolute;inset:0}
+.bd-claude{position:absolute;left:0;right:0;top:220px;display:flex;justify-content:center;z-index:3}
+.bd-claude .cbadge{margin-top:0;font-size:68px}
+.bd-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.bd-chip{display:flex;align-items:center;gap:16px;font-size:42px;font-weight:700;padding:22px 28px;border-radius:24px;background:var(--card);border:1px solid var(--line)}
+.bd-chip i{width:46px;height:46px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
+
 /* 2 vidiq */
 .win{padding:0;overflow:hidden}
 .win .bar{display:flex;gap:12px;align-items:center;padding:22px 28px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:24px;color:var(--muted)}
@@ -223,31 +250,47 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 <body>
 <div id="stage"><div id="world">
   <div class="dots" id="dots"></div><div class="amb a1" id="amb1"></div><div class="amb a2" id="amb2"></div>
-  <div class="eyebrow"><div class="pill">АМЕРИКАНСКИЙ <b>YOUTUBE</b> · CLAUDE</div></div>
+  <div class="eyebrow" id="eyebrow"><div class="pill">АМЕРИКАНСКИЙ <b>YOUTUBE</b> · CLAUDE</div></div>
   <div id="ai">создано с искусственным интеллектом</div>
 
-  <!-- 1 HOOK: канал -->
-  <section class="scene" id="sc-hook"><div class="zone">
-    <div class="hk-eb a" id="hk-eb">Я запустил канал <b>для США</b></div>
-    <div class="hk-name a" id="hk-name">Brain Maxed</div>
-    <div class="card ch a" id="hk-ch">
-      <div class="bn"><b>BRAIN MAXED</b> THE BRAIN STUFF NOBODY TELLS YOU</div>
-      <div class="row"><div class="av"></div><div><div class="nm">Brain Maxed</div><div class="sb">4 видео · English · USA</div></div><div class="btn">Subscribe</div></div>
+  <!-- 1 TREND -->
+  <section class="scene" id="sc-trend">
+    <div class="bgvid"><img class="seq" data-clip="donut" data-n="240" id="tr-v"></div><div class="bgshade"></div>
+    <div class="zone">
+      <div class="tr-small a" id="tr-a">Все говорят про</div>
+      <div class="tr-big a" id="tr-b">АМЕРИКАНСКИЙ</div>
+      <div class="tr-yt a" id="tr-c"><span class="ytplay"><svg width="84" height="84" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg></span>YOUTUBE</div>
+      <div class="tr-ai a" id="tr-d">с искусственным интеллектом</div>
+      <div class="floaters" id="tr-fl"></div>
     </div>
-    <div class="grid6" id="hk-grid">
-      <div class="tb a" style="background-image:url(assets/thumbs/yt-xbd0e2iGasA.jpg)"><i>9:12</i></div>
-      <div class="tb a" style="background-image:url(assets/thumbs/yt-IXtLF0ioEeQ.jpg)"><i>7:48</i></div>
-      <div class="tb a" style="background-image:url(assets/thumbs/what-sugar-does_thumb-B.jpg)"><i>8:05</i></div>
-      <div class="tb a" style="background-image:url(assets/thumbs/doomscrolling_thumb-A.jpg)"><i>8:05</i></div>
-      <div class="tb a" style="background-image:url(assets/thumbs/what-sugar-does_thumb-A.jpg)"><i>0:52</i></div>
-      <div class="tb a" style="background-image:url(assets/thumbs/doomscrolling_thumb-B.jpg)"><i>0:43</i></div>
+  </section>
+
+  <!-- 2 TRY -->
+  <section class="scene" id="sc-try"><div class="zone">
+    <div class="ring" id="try-r1"></div><div class="ring r2" id="try-r2"></div>
+    <div class="try-wrap"><div class="try-t a" id="try-a">Я РЕШИЛ</div><div class="try-t2 a" id="try-b">ПОПРОБОВАТЬ</div></div>
+  </div></section>
+
+  <!-- 3 BUILD -->
+  <section class="scene" id="sc-build"><div class="zone">
+    <div class="step">НАЧАЛ СОБИРАТЬ КАНАЛ <span>· примеры роликов</span></div>
+    <div class="wall" id="bd-wall">
+      <div class="wt a" id="bd-w0" style="background-image:url(assets/thumbs/yt-xbd0e2iGasA.jpg)"></div>
+      <div class="wt a" id="bd-w1" style="background-image:url(assets/thumbs/yt-IXtLF0ioEeQ.jpg)"></div>
+      <div class="wt a" id="bd-w2" style="background-image:url(assets/thumbs/what-sugar-does_thumb-B.jpg)"></div>
+      <div class="wt a" id="bd-w3" style="background-image:url(assets/thumbs/doomscrolling_thumb-A.jpg)"></div>
+      <div class="wt a" id="bd-w4"><img class="seq" data-clip="donut" data-n="240" id="bd-v1"></div>
+      <div class="wt a" id="bd-w5" style="background-image:url(assets/thumbs/what-sugar-does_thumb-A.jpg)"></div>
+      <div class="wt a" id="bd-w6" style="background-image:url(assets/thumbs/doomscrolling_thumb-B.jpg)"></div>
+      <div class="wt a" id="bd-w7"><img class="seq" data-clip="doom-long" data-n="240" id="bd-v2"></div>
+      <div class="wt a" id="bd-w8" style="background-image:url(assets/thumbs/doomscrolling_thumb-C.jpg)"></div>
+      <div class="bd-claude"><div class="cbadge a" id="bd-cl"><svg viewBox="0 0 24 24"><g stroke="#D97757" stroke-width="2.6" stroke-linecap="round"><path d="M12 2.5v19"/><path d="M2.5 12h19"/><path d="M5.3 5.3l13.4 13.4"/><path d="M18.7 5.3L5.3 18.7"/></g></svg>всё сделал Claude</div></div>
     </div>
-    <div class="hk-l2">
-      <div class="chips">
-        <div class="chip a" id="hk-c1">съёмка<i class="strike" id="hk-s1"></i></div>
-        <div class="chip a" id="hk-c2">монтаж<i class="strike" id="hk-s2"></i></div>
-      </div>
-      <div class="cbadge a" id="hk-cl"><svg viewBox="0 0 24 24"><g stroke="#D97757" stroke-width="2.6" stroke-linecap="round"><path d="M12 2.5v19"/><path d="M2.5 12h19"/><path d="M5.3 5.3l13.4 13.4"/><path d="M18.7 5.3L5.3 18.7"/></g></svg>всё делает Claude</div>
+    <div class="bd-list">
+      <div class="bd-chip a" id="bd-k0"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>сценарий</div>
+      <div class="bd-chip a" id="bd-k1"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>голос</div>
+      <div class="bd-chip a" id="bd-k2"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>картинки</div>
+      <div class="bd-chip a" id="bd-k3"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>монтаж</div>
     </div>
   </div></section>
 
@@ -299,7 +342,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
   <!-- 6 GEN -->
   <section class="scene" id="sc-gen"><div class="zone">
     <div class="step">05 · YT-VOICE <span>·</span> 06 · YT-VISUALS</div>
-    <div class="card voice a" id="gn-voice"><div class="lb">voice: <b>Cartesia</b> · EN-US · Brain Maxed</div><div class="wave" id="gn-wave"></div></div>
+    <div class="card voice a" id="gn-voice"><div class="lb">voice: <b>Cartesia</b> · EN-US</div><div class="wave" id="gn-wave"></div></div>
     <div class="phones">
       <div class="ph a" id="gn-p1"><img class="seq" data-clip="doom-01" data-n="180" id="gn-s1"><div class="scan" id="gn-sc1"></div><div class="lbl">персонаж</div><div class="done a" id="gn-d1">done</div></div>
       <div class="ph a" id="gn-p2"><img class="seq" data-clip="sugar-01" data-n="180" id="gn-s2"><div class="scan" id="gn-sc2"></div><div class="lbl">сцена</div><div class="done a" id="gn-d2">done</div></div>
@@ -436,6 +479,7 @@ function shake(t){let x=0,y=0,rz=0;for(const h of hits){const d=t-h.t;if(d<0||d>
 
 function buildCaptions(){
   for(const s of TL.sentences){
+    if(s.scene==='trend'||s.scene==='try') continue;
     let grp=[],len=0;
     const flush=()=>{if(grp.length){caps.push({words:grp,start:grp[0].start,light:s.scene==='publish',color:s.scene==='retention'});grp=[];len=0}};
     for(const w of s.words){ if(len+w.text.length>26 && grp.length) flush(); grp.push({...w,text:w.text.replace(' —',' —')}); len+=w.text.length+1; }
@@ -457,8 +501,8 @@ function applyCaptions(t){
 }
 
 function setupScenes(){
-  const order=['hook','vidiq','skills','outliers','script','gen','edit','thumbs','retention','publish','share','cta'];
-  const ids={hook:'sc-hook',vidiq:'sc-vidiq',skills:'sc-skills',outliers:'sc-outliers',script:'sc-script',gen:'sc-gen',edit:'sc-edit',thumbs:'sc-thumbs',retention:'sc-ret',publish:'sc-pub',share:'sc-share',cta:'sc-cta'};
+  const order=['trend','try','build','vidiq','skills','outliers','script','gen','edit','thumbs','retention','publish','share','cta'];
+  const ids={trend:'sc-trend',try:'sc-try',build:'sc-build',vidiq:'sc-vidiq',skills:'sc-skills',outliers:'sc-outliers',script:'sc-script',gen:'sc-gen',edit:'sc-edit',thumbs:'sc-thumbs',retention:'sc-ret',publish:'sc-pub',share:'sc-share',cta:'sc-cta'};
   order.forEach((k,i)=>{const ss=TL.sentences.filter(s=>s.scene===k); scenes.push({el:$(ids[k]),zone:$(ids[k]).querySelector('.zone'),start:ss[0].start-(i?0.1:0)});});
   scenes.forEach((s,i)=>{s.end=i+1<scenes.length?scenes[i+1].start:TL.duration+10; if(i) SFX.push({t:s.start-.05,type:'whoosh'});});
 }
@@ -492,71 +536,88 @@ function setSeq(img,t,t0){
 function setup(timeline){
   TL=timeline; setupScenes(); buildCaptions();
   const S=i=>TL.sentences[i].start, E=i=>TL.sentences[i].end;
+  const IX={}; TL.sentences.forEach((x,i)=>{if(!(x.scene in IX)) IX[x.scene]=i;});
 
-  // 1 HOOK — канал Brain Maxed виден с первого кадра
-  anim('hk-eb',-1); anim('hk-name',-1); anim('hk-ch',-1);
-  const tiles=[...$('hk-grid').children], g0=0.18, out1=S(1)-.05;
-  tiles.forEach((el,i)=>anim(el,g0+i*.11,{y:90,s:.6,r:(i%2?6:-6),out:out1+i*.03,oy:-60,sfx:i%2?false:'pop'}));
-  hit(W(0,'Brain'),18);
-  anim('hk-c1',W(1,'снимаю')-.05,{x:-160,y:0,s:.8}); anim('hk-c2',W(1,'монтирую')-.05,{x:160,y:0,s:.8});
-  anim('hk-cl',W(1,'делает')-.05,{s:.4,y:40,ease:'back'}); hit(W(1,'Claude')+.05,16);
-  SFX.push({t:W(1,'снимаю')+.4,type:'strike'},{t:W(1,'монтирую')+.4,type:'strike'});
+  // 1 TREND — кинетический заголовок поверх живых кадров канала
+  const T0=IX.trend, T1=IX.try, T2=IX.build;
+  anim('tr-a',-1,{sfx:false}); anim('tr-b',W(T0,'американский')-.08,{s:.4,y:0,ease:'back'}); anim('tr-c',W(T0,'YouTube')-.08,{s:.3,y:30,r:-6});
+  anim('tr-d',W(T0,'с')-.05,{x:-200,y:0,s:1}); hit(W(T0,'YouTube')+.08,20); SFX.push({t:0,type:'riser'});
+  const fl=$('tr-fl'); [['faceless',30,10],['AI voice',520,0],['без лица',250,90],['USA',760,70],['Shorts',60,150],['автопилот',480,140]].forEach((f,i)=>{
+    const d=document.createElement('div');d.className='fl a';d.textContent=f[0];d.style.left=f[1]+'px';d.style.top=f[2]+'px';d.id='fl'+i;fl.appendChild(d);
+    anim(d,.35+i*.22,{s:.3,y:40,r:(i%2?10:-10),sfx:i%2?false:'pop'});});
   updaters.push(t=>{
-    $('hk-s1').style.transform=`scaleX(${ex(clamp((t-W(1,'снимаю')-.4)/.25))})`;
-    $('hk-s2').style.transform=`scaleX(${ex(clamp((t-W(1,'монтирую')-.4)/.25))})`;
-    $('hk-name').style.backgroundPosition=`${100-((t*45)%300)}% 0`;
-    const pb=Math.exp(-Math.pow((t-W(0,'Brain')-.12)/.12,2)); $('hk-name').style.transform=`scale(${1+.12*pb}) rotate(${-2*pb}deg)`;
+    const clips=['donut','doom-long','ai-01','sugar-01','doom-01','kids-04'], k=Math.floor(t/.55)%clips.length, img=$('tr-v');
+    if(img.dataset.clip!==clips[k]){img.dataset.clip=clips[k]; img.dataset.n=(clips[k]==='donut'||clips[k]==='doom-long')?240:180;}
+    setSeq(img,t,0); img.style.transform=`scale(${1.05+.08*((t/.55)%1)})`;
+    [...fl.children].forEach((d,i)=>{d.style.translate=`${Math.sin(t*1.3+i)*14}px ${Math.cos(t*1.1+i*2)*10}px`;});
+    const pb=Math.exp(-Math.pow((t-W(T0,'YouTube')-.1)/.12,2)); $('tr-c').style.transform+=` scale(${1+.1*pb})`;
+    $('eyebrow').style.opacity=clamp((t-S(T2)+.1)/.3);
   });
 
+  // 2 TRY — удар и кольца
+  anim('try-a',S(T1)-.06,{s:2.2,y:0,ease:'expo',sfx:false}); anim('try-b',W(T1,'попробовать')-.06,{s:2.4,y:0,ease:'expo',sfx:false});
+  hit(S(T1)+.05,16); hit(W(T1,'попробовать')+.06,24);
+  updaters.push(t=>{ const r=W(T1,'попробовать'); [['try-r1',0],['try-r2',.12]].forEach(([id,dl])=>{const k=clamp((t-r-dl)/.7);
+    $(id).style.opacity=k>0&&k<1?(1-k):0; $(id).style.transform=`scale(${1+7*eo(k)})`;}); });
+
+  // 3 BUILD — плитки роликов собираются в сетку, потом «всё сделал Claude»
+  const slots=[[0,0],[318,0],[636,0],[0,185],[318,185],[636,185],[0,370],[318,370],[636,370]], tb0=W(T2,'собирать')-.15;
+  slots.forEach((p,i)=>{const el=$('bd-w'+i); el.style.left=p[0]+'px'; el.style.top=p[1]+'px';
+    anim(el,tb0+i*.07,{d:.5,x:(i%3-1)*520+(i%2?120:-120),y:(i<3?-520:(i<6?(i%2?560:-560):620)),r:(i%2?38:-34),s:.4,sfx:i%2?false:'pop'});});
+  const tcl=W(T2,'Claude'); anim('bd-cl',tcl-.1,{s:2.0,y:0,ease:'expo',sfx:false}); hit(tcl+.02,22);
+  ['сценарий','голос','картинки','монтаж'].forEach((w,i)=>{anim('bd-k'+i,W(T2,w)-.05,{s:.4,y:40,r:(i%2?6:-6),sfx:'tick'});});
+  updaters.push(t=>{ const dim=ex(clamp((t-tcl)/.3)); $('bd-wall').style.filter=`brightness(${1-.45*dim})`;
+    setSeq($('bd-v1'),t,tb0); setSeq($('bd-v2'),t,tb0+1); });
+
   // 2 VIDIQ
-  anim('vq-win',S(2),{rx:-50,y:120}); anim('vq-big',W(2,'больше')-.15,{s:.5,y:0});
+  anim('vq-win',S(IX.vidiq),{rx:-50,y:120}); anim('vq-big',W(IX.vidiq,'больше')-.15,{s:.5,y:0});
   const tools=['keyword_research','outliers','generate_script','generate_titles','voiceover_generate','generate_thumbnail','generate_video','generate_broll','motion_graphics','generate_music','compose','generate_clips','video_transcript','channel_analytics'];
-  const tb=$('vq-tools'), t0=W(2,'больше'), t1=W(2,'аналитики');
+  const tb=$('vq-tools'), t0=W(IX.vidiq,'больше'), t1=W(IX.vidiq,'аналитики');
   tools.forEach((n,i)=>{const d=document.createElement('div');d.className='tool a';d.textContent=n;d.id='vq-t'+i;tb.appendChild(d);
     anim(d,t0+(t1-t0)*i/tools.length,{d:.38,x:(i%3-1)*240,y:120,s:.5,r:(i%2?12:-12),sfx:i%3?false:'pop'});});
-  SFX.push({t:W(2,'vidIQ'),type:'click'});
-  const nEnd=W(2,'больше')+1.15; hit(nEnd,12);
+  SFX.push({t:W(IX.vidiq,'vidIQ'),type:'click'});
+  const nEnd=W(IX.vidiq,'больше')+1.15; hit(nEnd,12);
   updaters.push(t=>{
-    const on=ex(clamp((t-W(2,'vidIQ'))/.25));
+    const on=ex(clamp((t-W(IX.vidiq,'vidIQ'))/.25));
     $('vq-knob').style.transform=`translateX(${52*on}px)`; $('vq-knob').style.background=on>.5?'#0B0A10':'#8E8A9A';
     $('vq-tog').style.background=`rgba(201,167,255,${on})`; $('vq-tog').style.boxShadow=`0 0 ${30*on}px rgba(201,167,255,${.6*on})`;
-    const c=eio(clamp((t-W(2,'больше'))/1.15)); $('vq-n').textContent=Math.round(71*c);
+    const c=eio(clamp((t-W(IX.vidiq,'больше'))/1.15)); $('vq-n').textContent=Math.round(71*c);
     const pb=Math.exp(-Math.pow((t-nEnd)/.1,2)); $('vq-n').style.transform=`scale(${1+.18*pb})`;
-    $('vq-t0').classList.toggle('hl',t>=W(2,'поиска')); $('vq-t13').classList.toggle('hl',t>=W(2,'аналитики'));
+    $('vq-t0').classList.toggle('hl',t>=W(IX.vidiq,'поиска')); $('vq-t13').classList.toggle('hl',t>=W(IX.vidiq,'аналитики'));
   });
 
   // 3 SKILLS
-  anim('sk-term',S(3)-.1,{rx:40,y:100});
-  const cmd='/plugin install yt-usa@alisov-tools', g=$('sk-grid'), gs=W(3,'двенадцать')+.1;
+  anim('sk-term',S(IX.skills)-.1,{rx:40,y:100});
+  const cmd='/plugin install yt-usa@alisov-tools', g=$('sk-grid'), gs=W(IX.skills,'двенадцать')+.1;
   ['niche','outliers','brand','script','voice','visuals','edit','thumbnail','shorts','publish','retention','money'].forEach((n,i)=>{
     const d=document.createElement('div');d.className='sk a';d.innerHTML=`<div class="no">${String(i+1).padStart(2,'0')}</div><div class="nm">${n}</div>`;g.appendChild(d);
     anim(d,gs+i*.055,{d:.42,y:40,s:.9,rx:-95,sfx:i%3?false:'pop'});});
-  anim('sk-ok',gs-.2,{y:10,sfx:'click'}); anim('sk-rec',W(3,'рецепт')-.1,{s:.6,y:30});
-  updaters.push(t=>{const k=Math.round(cmd.length*clamp((t-S(3))/(gs-.3-S(3)))); $('sk-cmd').textContent=cmd.slice(0,k);
+  anim('sk-ok',gs-.2,{y:10,sfx:'click'}); anim('sk-rec',W(IX.skills,'рецепт')-.1,{s:.6,y:30});
+  updaters.push(t=>{const k=Math.round(cmd.length*clamp((t-S(IX.skills))/(gs-.3-S(IX.skills)))); $('sk-cmd').textContent=cmd.slice(0,k);
     $('sk-caret').style.opacity=(t<gs-.2&&Math.floor(t*3)%2===0)?1:0;});
 
   // 4 OUTLIERS
-  anim('ol-vid',S(4),{x:-300,y:0,r:-6}); anim('ol-x',W(4,'сорок')-.3,{s:.3,y:0,ease:'back',sfx:false});
-  anim('ol-b1',W(4,'больше')-.25,{x:-120,y:0}); anim('ol-b2',W(4,'больше'),{x:-120,y:0}); anim('ol-note',W(4,'больше')+.3,{y:10,sfx:false});
-  const xLand=W(4,'сорок')+.75; hit(xLand,22); SFX.push({t:W(4,'сорок')-.2,type:'riser'});
-  updaters.push(t=>{const c=eo(clamp((t-W(4,'сорок')+.2)/.95)); $('ol-n').textContent=Math.max(1,Math.round(40*c));
-    $('ol-f1').style.transform=`scaleX(${.025*ex(clamp((t-W(4,'больше')+.1)/.4))})`; $('ol-f2').style.transform=`scaleX(${ex(clamp((t-W(4,'больше')-.1)/.9))})`;
+  anim('ol-vid',S(IX.outliers),{x:-300,y:0,r:-6}); anim('ol-x',W(IX.outliers,'сорок')-.3,{s:.3,y:0,ease:'back',sfx:false});
+  anim('ol-b1',W(IX.outliers,'больше')-.25,{x:-120,y:0}); anim('ol-b2',W(IX.outliers,'больше'),{x:-120,y:0}); anim('ol-note',W(IX.outliers,'больше')+.3,{y:10,sfx:false});
+  const xLand=W(IX.outliers,'сорок')+.75; hit(xLand,22); SFX.push({t:W(IX.outliers,'сорок')-.2,type:'riser'});
+  updaters.push(t=>{const c=eo(clamp((t-W(IX.outliers,'сорок')+.2)/.95)); $('ol-n').textContent=Math.max(1,Math.round(40*c));
+    $('ol-f1').style.transform=`scaleX(${.025*ex(clamp((t-W(IX.outliers,'больше')+.1)/.4))})`; $('ol-f2').style.transform=`scaleX(${ex(clamp((t-W(IX.outliers,'больше')-.1)/.9))})`;
     const pb=Math.exp(-Math.pow((t-xLand)/.1,2)); $('ol-x').style.transform=`scale(${1+.22*pb}) rotate(${-3*pb}deg)`; });
 
   // 5 SCRIPT — реальные заголовки канала
-  anim('sc-doc',S(5)-.05,{rx:-40,y:100});
+  anim('sc-doc',S(IX.script)-.05,{rx:-40,y:100});
   const hooks=[['Nobody Warned You What AI Does to Your Brain','9.1'],['What One Donut Really Does to Your Body','8.4'],['How to Actually Stop Doomscrolling','7.8'],['Your Kid\'s Cartoon No Longer Ends','7.5'],['Why You Can\'t Focus Anymore','6.9']];
-  const hb=$('sc-hooks'), h0=W(5,'сценарий')-.1, h1=W(5,'хуков');
+  const hb=$('sc-hooks'), h0=W(IX.script,'сценарий')-.1, h1=W(IX.script,'хуков');
   hooks.forEach((h,i)=>{const d=document.createElement('div');d.className='hrow a';d.id='hr'+i;d.innerHTML=`<div class="k">H${i+1}</div><div class="tx">${h[0]}</div><div class="sc" id="hs${i}">—</div>`;hb.appendChild(d);
     anim(d,h0+(h1-h0)*i/5,{d:.4,x:420,y:0,s:.9,sfx:i%2?false:'pop'});});
-  const tsc=W(5,'пять')-.05; SFX.push({t:tsc,type:'tick'},{t:tsc+.2,type:'tick'},{t:tsc+.4,type:'tick'});
-  hit(W(5,'оценкой')+.05,10);
+  const tsc=W(IX.script,'пять')-.05; SFX.push({t:tsc,type:'tick'},{t:tsc+.2,type:'tick'},{t:tsc+.4,type:'tick'});
+  hit(W(IX.script,'оценкой')+.05,10);
   updaters.push(t=>{hooks.forEach((h,i)=>{$('hs'+i).textContent=t>=tsc+i*.1?h[1]:'—';});
-    const best=t>=W(5,'оценкой'); $('hr0').classList.toggle('best',best); if(best){const pb=.5+.5*Math.sin((t-W(5,'оценкой'))*9); $('hr0').style.boxShadow=`0 0 ${24*pb}px rgba(201,167,255,.55)`;} });
+    const best=t>=W(IX.script,'оценкой'); $('hr0').classList.toggle('best',best); if(best){const pb=.5+.5*Math.sin((t-W(IX.script,'оценкой'))*9); $('hr0').style.boxShadow=`0 0 ${24*pb}px rgba(201,167,255,.55)`;} });
 
   // 6 GEN — голос и живые шортс канала
-  anim('gn-voice',S(6)-.05,{y:80,rx:-30});
-  const sc=W(6,'Персонажи');
+  anim('gn-voice',S(IX.gen)-.05,{y:80,rx:-30});
+  const sc=W(IX.gen,'Персонажи');
   anim('gn-p1',sc-.15,{x:-380,y:60,r:-14,s:.8}); anim('gn-p2',sc+.1,{x:380,y:60,r:14,s:.8});
   anim('gn-d1',sc+1.0,{s:.4,y:0,sfx:'click'}); anim('gn-d2',sc+1.35,{s:.4,y:0,sfx:false});
   const wv=$('gn-wave'); for(let i=0;i<46;i++){wv.appendChild(document.createElement('i'));}
@@ -569,25 +630,25 @@ function setup(timeline){
   });
 
   // 7 EDIT — живой кадр из длинного ролика
-  anim('ed-prev',S(7)-.05,{s:.7,y:40,rx:25}); anim('ed-tl',S(7)+.05,{y:120});
-  const tk=W(7,'кадры'), vl=$('ed-v'), frames=[1,60,120,180,230];
+  anim('ed-prev',S(IX.edit)-.05,{s:.7,y:40,rx:25}); anim('ed-tl',S(IX.edit)+.05,{y:120});
+  const tk=W(IX.edit,'кадры'), vl=$('ed-v'), frames=[1,60,120,180,230];
   [[0,19],[20,17],[38,22],[61,18],[80,20]].forEach((c,i)=>{const d=document.createElement('div');d.className='clip';d.style.left=c[0]+'%';d.style.width=c[1]+'%';
     d.style.backgroundImage=`url(assets/frames/${i%2?'doom-long':'donut'}/${String(frames[i]).padStart(4,'0')}.jpg)`;vl.appendChild(d);anim(d,tk-.15+i*.08,{d:.3,y:0,x:80,s:1,sfx:i?false:'pop'});});
-  const sl=$('ed-s'); for(let i=0;i<9;i++){const d=document.createElement('div');d.className='clip cs';d.style.left=(i*11.2)+'%';d.style.width='9%';sl.appendChild(d);anim(d,W(7,'субтитры')-.1+i*.04,{d:.22,y:0,s:.5,sfx:false});}
-  anim('ed-m',W(7,'музыка')-.1,{y:0,x:-80,s:1});
+  const sl=$('ed-s'); for(let i=0;i<9;i++){const d=document.createElement('div');d.className='clip cs';d.style.left=(i*11.2)+'%';d.style.width='9%';sl.appendChild(d);anim(d,W(IX.edit,'субтитры')-.1+i*.04,{d:.22,y:0,s:.5,sfx:false});}
+  anim('ed-m',W(IX.edit,'музыка')-.1,{y:0,x:-80,s:1});
   const ew=$('ed-wv'); for(let i=0;i<140;i++){const b=document.createElement('i');b.style.height=(6+30*Math.abs(Math.sin(i*1.7)*Math.sin(i*.31)))+'px';ew.appendChild(b);}
-  updaters.push(t=>{const p=clamp((t-S(7))/(E(7)-S(7)+.3)); const sw=p>.5;
-    $('ed-s2').style.opacity=sw?1:0; setSeq(sw?$('ed-s2'):$('ed-s1'),t,S(7)-.1);
+  updaters.push(t=>{const p=clamp((t-S(IX.edit))/(E(IX.edit)-S(IX.edit)+.3)); const sw=p>.5;
+    $('ed-s2').style.opacity=sw?1:0; setSeq(sw?$('ed-s2'):$('ed-s1'),t,S(IX.edit)-.1);
     const w=$('ed-tl').clientWidth-22-120; $('ed-ph').style.left=(120+w*p)+'px'; });
 
   // 8 THUMBS + SHORTS — реальные варианты обложки
-  const sh=W(8,'Шортс');
-  ['th-1','th-2','th-3'].forEach((id,i)=>anim(id,S(8)+i*.14,{x:(i-1)*260,y:120,r:(i-1)*8,s:.7,out:sh-.3,oy:-80}));
-  anim('th-ab',W(8,'кликабельности')+.35,{s:.3,y:0,sfx:'click'}); hit(W(8,'кликабельности')+.3,10);
+  const sh=W(IX.thumbs,'Шортс');
+  ['th-1','th-2','th-3'].forEach((id,i)=>anim(id,S(IX.thumbs)+i*.14,{x:(i-1)*260,y:120,r:(i-1)*8,s:.7,out:sh-.3,oy:-80}));
+  anim('th-ab',W(IX.thumbs,'кликабельности')+.35,{s:.3,y:0,sfx:'click'}); hit(W(IX.thumbs,'кликабельности')+.3,10);
   ['th-p1','th-p2','th-p3'].forEach((id,i)=>anim(id,sh+.02+i*.12,{y:260,r:(i-1)*14,s:.7,sfx:i?false:'pop'}));
-  SFX.push({t:W(8,'оценкой')-.05,type:'tick'},{t:W(8,'оценкой')+.1,type:'tick'},{t:W(8,'оценкой')+.25,type:'tick'});
-  updaters.push(t=>{ const tsc=W(8,'оценкой')-.05; const v=['6.8','8.9','7.2'];
-    v.forEach((x,i)=>$('th-s'+(i+1)).textContent=t>=tsc+i*.15?x:'—'); $('th-2').classList.toggle('best',t>=W(8,'кликабельности')+.2);
+  SFX.push({t:W(IX.thumbs,'оценкой')-.05,type:'tick'},{t:W(IX.thumbs,'оценкой')+.1,type:'tick'},{t:W(IX.thumbs,'оценкой')+.25,type:'tick'});
+  updaters.push(t=>{ const tsc=W(IX.thumbs,'оценкой')-.05; const v=['6.8','8.9','7.2'];
+    v.forEach((x,i)=>$('th-s'+(i+1)).textContent=t>=tsc+i*.15?x:'—'); $('th-2').classList.toggle('best',t>=W(IX.thumbs,'кликабельности')+.2);
     $('th-step').innerHTML=t>=sh-.15?'09 · YT-SHORTS <span>· из длинного видео</span>':'08 · YT-THUMBNAIL <span>· превью канала</span>';
     $('th-col').style.display=t>=sh+.2?'none':'grid';
     ['th-q1','th-q2','th-q3'].forEach((id,i)=>setSeq($(id),t,sh+i*.4));
@@ -595,28 +656,28 @@ function setup(timeline){
   });
 
   // 9 RETENTION
-  anim('rt-fav',S(9)-.05,{s:.3,y:0,r:-10}); anim('rt-card',S(9)+.05,{y:120,rx:-30}); anim('rt-drop',W(9,'секунда'),{s:.3,y:0,sfx:false});
-  anim('rt-q',W(9,'ушли')-.1,{x:-200,y:0}); anim('rt-fix',W(9,'одна')-.1,{s:.6,y:60}); hit(W(9,'секунда')+.05,18); hit(W(9,'одна')+.2,8);
+  anim('rt-fav',S(IX.retention)-.05,{s:.3,y:0,r:-10}); anim('rt-card',S(IX.retention)+.05,{y:120,rx:-30}); anim('rt-drop',W(IX.retention,'секунда'),{s:.3,y:0,sfx:false});
+  anim('rt-q',W(IX.retention,'ушли')-.1,{x:-200,y:0}); anim('rt-fix',W(IX.retention,'одна')-.1,{s:.6,y:60}); hit(W(IX.retention,'секунда')+.05,18); hit(W(IX.retention,'одна')+.2,8);
   const cv=$('rt-curve'), L=cv.getTotalLength(); cv.style.strokeDasharray=L;
-  updaters.push(t=>{ cv.style.strokeDashoffset=L*(1-eio(clamp((t-S(9)-.1)/1.2)));
-    const m=ex(clamp((t-W(9,'секунда')+.1)/.25)); $('rt-line').style.opacity=m; $('rt-dot').style.opacity=m; $('rt-dot').setAttribute('r',15+8*Math.max(0,Math.sin(t*7))*m); });
+  updaters.push(t=>{ cv.style.strokeDashoffset=L*(1-eio(clamp((t-S(IX.retention)-.1)/1.2)));
+    const m=ex(clamp((t-W(IX.retention,'секунда')+.1)/.25)); $('rt-line').style.opacity=m; $('rt-dot').style.opacity=m; $('rt-dot').setAttribute('r',15+8*Math.max(0,Math.sin(t*7))*m); });
 
   // 10 PUBLISH — реальный ролик канала
-  anim('pb-dlg',S(10)-.05,{y:140,rx:-35}); anim('pb-lock',W(10,'без')-.05,{s:.5,y:40});
-  const tc=W(10,'сам'); hit(tc+.02,10); SFX.push({t:tc,type:'click'});
-  updaters.push(t=>{const m=eio(clamp((t-S(10))/(tc-S(10)+.05)));
-    const cur=$('pb-cur'); cur.style.left=(640-430*m)+'px'; cur.style.top=(860-250*m)+'px'; cur.style.opacity=t<S(10)?0:1;
+  anim('pb-dlg',S(IX.publish)-.05,{y:140,rx:-35}); anim('pb-lock',W(IX.publish,'без')-.05,{s:.5,y:40});
+  const tc=W(IX.publish,'сам'); hit(tc+.02,10); SFX.push({t:tc,type:'click'});
+  updaters.push(t=>{const m=eio(clamp((t-S(IX.publish))/(tc-S(IX.publish)+.05)));
+    const cur=$('pb-cur'); cur.style.left=(640-430*m)+'px'; cur.style.top=(860-250*m)+'px'; cur.style.opacity=t<S(IX.publish)?0:1;
     const click=t>=tc&&t<tc+.22; $('pb-btn').style.transform=`scale(${click?.92:1})`; $('pb-btn').style.boxShadow=click?'0 0 0 16px rgba(98,0,255,.2)':'none'; });
 
   // 11 SHARE
-  anim('sh-sheet',S(11)-.05,{y:160,rx:-30}); anim('sh-ck',W(11,'тому'),{s:.2,y:0,sfx:'click'}); anim('sh-send',W(11,'хочет'),{s:.7,y:30});
-  SFX.push({t:W(11,'YouTube')+.1,type:'whoosh'});
-  updaters.push(t=>{const f=eo(clamp((t-W(11,'YouTube')-.1)/.55)); $('sh-plane').style.transform=`translate(${220*f}px,${-260*f}px) rotate(${18*f}deg) scale(${1+.4*f})`; $('sh-plane').style.opacity=1-f; });
+  anim('sh-sheet',S(IX.share)-.05,{y:160,rx:-30}); anim('sh-ck',W(IX.share,'тому'),{s:.2,y:0,sfx:'click'}); anim('sh-send',W(IX.share,'хочет'),{s:.7,y:30});
+  SFX.push({t:W(IX.share,'YouTube')+.1,type:'whoosh'});
+  updaters.push(t=>{const f=eo(clamp((t-W(IX.share,'YouTube')-.1)/.55)); $('sh-plane').style.transform=`translate(${220*f}px,${-260*f}px) rotate(${18*f}deg) scale(${1+.4*f})`; $('sh-plane').style.opacity=1-f; });
 
   // 12 CTA
-  anim('ct-h',S(12)-.05,{y:90,s:.8}); ['ct-g1','ct-g2','ct-g3','ct-g4'].forEach((id,i)=>anim(id,W(12,'плагины')+i*.1,{s:.4,y:30,r:(i%2?6:-6),sfx:i%2?false:'pop'}));
-  anim('ct-cmt',W(12,'Пиши')-.25,{y:80}); anim('ct-go',W(12,'комментариях'),{s:.5,y:0,sfx:false}); anim('ct-dm',W(12,'пришлю')-.05,{y:120,rx:-30});
-  const wa=W(12,'ЮТУБ')-.05; for(let k=0;k<4;k++) SFX.push({t:wa+k*.14,type:'tick'}); hit(wa+.6,14);
+  anim('ct-h',S(IX.cta)-.05,{y:90,s:.8}); ['ct-g1','ct-g2','ct-g3','ct-g4'].forEach((id,i)=>anim(id,W(IX.cta,'плагины')+i*.1,{s:.4,y:30,r:(i%2?6:-6),sfx:i%2?false:'pop'}));
+  anim('ct-cmt',W(IX.cta,'Пиши')-.25,{y:80}); anim('ct-go',W(IX.cta,'комментариях'),{s:.5,y:0,sfx:false}); anim('ct-dm',W(IX.cta,'пришлю')-.05,{y:120,rx:-30});
+  const wa=W(IX.cta,'ЮТУБ')-.05; for(let k=0;k<4;k++) SFX.push({t:wa+k*.14,type:'tick'}); hit(wa+.6,14);
   updaters.push(t=>{ const word='ЮТУБ', k=Math.floor(clamp((t-wa)/.56)*word.length+1e-6), el=$('ct-in');
     if(t<wa){el.textContent='Добавьте комментарий…';el.className='in';} else {el.textContent=word.slice(0,Math.max(1,k));el.className='in typed';}
     const pb=Math.exp(-Math.pow((t-wa-.6)/.12,2)); el.style.transform=`scale(${1+.2*pb})`; el.style.transformOrigin='left center'; });
