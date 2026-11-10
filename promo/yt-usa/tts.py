@@ -28,7 +28,7 @@ def tokens(text):
     out = []
     for raw in text.split():
         disp, _, spoken = raw.partition("|")
-        spoken = spoken or disp
+        spoken = (spoken or disp).replace("_", " ")
         if re.fullmatch(r"[—–-]+", disp) and out:
             out[-1] = (out[-1][0] + " " + disp, out[-1][1] + " " + spoken)
             continue

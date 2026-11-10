@@ -66,7 +66,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 .tr-small{font-family:var(--head);font-weight:700;font-size:58px;color:#E9E5F1;margin-top:40px}
 .tr-big{font-family:var(--display);font-size:86px;line-height:1;margin-top:18px;letter-spacing:-.01em}
 .tr-yt{display:flex;align-items:center;gap:26px;font-family:var(--yt);font-size:206px;line-height:.95;color:#fff;margin-top:8px;letter-spacing:.01em}
-.ytplay{width:170px;height:120px;border-radius:38px;background:#FF0033;display:grid;place-items:center;flex:none;box-shadow:0 20px 60px rgba(255,0,51,.35)}
+.ytplay{width:210px;height:148px;border-radius:44px;background:#FF0033;display:grid;place-items:center;flex:none;box-shadow:0 20px 60px rgba(255,0,51,.35)}
 .tr-ai{font-family:var(--head);font-weight:700;font-size:54px;color:var(--accent);margin-top:22px}
 .floaters{position:absolute;left:-40px;right:-40px;top:760px;height:200px}
 .fl{position:absolute;font-family:var(--mono);font-size:28px;padding:12px 20px;border-radius:999px;background:rgba(21,19,28,.86);border:1px solid var(--line);color:#D9D4E4;white-space:nowrap}
@@ -85,6 +85,34 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 .bd-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
 .bd-chip{display:flex;align-items:center;gap:16px;font-size:42px;font-weight:700;padding:22px 28px;border-radius:24px;background:var(--card);border:1px solid var(--line)}
 .bd-chip i{width:46px;height:46px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
+
+/* pay */
+.pay{padding:30px}
+.pay .hd{display:flex;align-items:center;gap:18px;font-family:var(--head);font-weight:700;font-size:40px;margin-bottom:22px}
+.pay .hd .yp{width:86px;height:60px;border-radius:18px;background:#FF0033;display:grid;place-items:center;flex:none}
+.prow{display:flex;align-items:center;gap:20px;padding:24px;border-radius:22px;background:var(--card2);border:2px solid var(--line);margin-top:14px;font-size:36px;font-weight:700}
+.prow .ic{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;flex:none}
+.prow.ok{border-color:rgba(43,214,123,.6)} .prow.ok .ic{background:#2BD67B}
+.prow.no{border-color:rgba(255,77,94,.55)} .prow.no .ic{background:#FF4D5E}
+.prow small{display:block;font-size:26px;font-weight:500;color:var(--muted);margin-top:4px}
+.prow .res{margin-left:auto;font-family:var(--mono);font-size:28px;white-space:nowrap}
+.prow.ok .res{color:#2BD67B} .prow.no .res{color:#FF4D5E}
+/* styles */
+.st-pills{display:flex;gap:16px;margin-bottom:24px}
+.st-pills .chip{font-size:36px;padding:16px 28px}
+.st-phones{display:flex;justify-content:center;gap:22px}
+.st-phones .ph{width:290px;height:516px}
+.st-tag{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--display);font-size:36px;color:#fff;background:rgba(11,10,16,.85);padding:8px 16px;border-radius:16px;z-index:3;white-space:nowrap;letter-spacing:.02em}
+/* deadline */
+.dl-date{display:inline-block;font-family:var(--head);font-weight:700;font-size:46px;padding:16px 32px;border-radius:999px;background:#fff;color:var(--indigo)}
+.dl-lbl{font-family:var(--head);font-weight:700;font-size:44px;margin-top:30px;line-height:1.15}
+.dl-num{display:flex;align-items:flex-end;gap:24px;margin-top:20px}
+.dl-num .n{font-family:var(--display);font-size:250px;line-height:.85;color:#fff;letter-spacing:-.02em}
+.dl-num .x2{font-family:var(--yt);font-size:110px;line-height:1;color:var(--indigo);background:#fff;border-radius:24px;padding:4px 22px;margin-bottom:14px}
+.dl-sub{font-family:var(--head);font-weight:700;font-size:46px;margin-top:10px}
+.dl-old{font-family:var(--display);font-size:80px;color:rgba(255,255,255,.55);position:relative;display:inline-block;margin-top:18px}
+.dl-old i{position:absolute;left:-6px;right:-6px;top:52%;height:8px;background:#fff;border-radius:4px;transform-origin:left;transform:scaleX(0)}
+.dl-note{margin-top:30px;font-size:30px;line-height:1.35;color:rgba(255,255,255,.85);padding:20px 24px;border-radius:20px;background:rgba(11,10,16,.28)}
 
 /* 2 vidiq */
 .win{padding:0;overflow:hidden}
@@ -181,7 +209,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
 .shorts .ph{width:306px;height:544px}
 
 /* 9 retention */
-.bgc .step{color:#fff}.bgc .step span{color:rgba(255,255,255,.72)}
+.bgc .step{color:#fff} #sc-ret .fav{background:var(--accent);color:#0B0A10}.bgc .step span{color:rgba(255,255,255,.72)}
 .fav{display:inline-block;font-family:var(--head);font-weight:700;font-size:42px;padding:14px 30px;border-radius:999px;background:#fff;color:var(--indigo);margin-bottom:28px}
 .rp{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:28px;position:relative}
 .rp .lb{font-family:var(--mono);font-size:24px;color:rgba(255,255,255,.78)}
@@ -259,9 +287,22 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
     <div class="zone">
       <div class="tr-small a" id="tr-a">Все говорят про</div>
       <div class="tr-big a" id="tr-b">АМЕРИКАНСКИЙ</div>
-      <div class="tr-yt a" id="tr-c"><span class="ytplay"><svg width="84" height="84" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg></span>YOUTUBE</div>
+      <div class="tr-yt a" id="tr-c"><span class="ytplay"><svg width="104" height="104" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg></span>YOUTUBE</div>
       <div class="tr-ai a" id="tr-d">с искусственным интеллектом</div>
       <div class="floaters" id="tr-fl"></div>
+    </div>
+  </section>
+
+  <!-- PAY -->
+  <section class="scene" id="sc-pay">
+    <div class="bgvid"><img class="seq" data-clip="sugar-01" data-n="180" id="pay-v"></div><div class="bgshade"></div>
+    <div class="zone">
+      <div class="step">ПАРТНЁРСКАЯ ПРОГРАММА <span>· YouTube</span></div>
+      <div class="card pay a" id="pay-card">
+        <div class="hd"><span class="yp"><svg width="40" height="40" viewBox="0 0 24 24" fill="#fff"><path d="M8 5.5v13l11-6.5z"/></svg></span>Монетизация роликов с ИИ</div>
+        <div class="prow ok a" id="pay-r1"><span class="ic"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div>Ролик с ИИ<small>свой сюжет, сценарий, стиль</small></div><span class="res">платят</span></div>
+        <div class="prow no a" id="pay-r2"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><div>Шаблонный конвейер<small>одинаковые ролики потоком</small></div><span class="res">не платят</span></div>
+      </div>
     </div>
   </section>
 
@@ -292,6 +333,28 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
       <div class="bd-chip a" id="bd-k2"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>картинки</div>
       <div class="bd-chip a" id="bd-k3"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0A10" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i>монтаж</div>
     </div>
+  </div></section>
+
+  <!-- STYLES -->
+  <section class="scene" id="sc-styles"><div class="zone">
+    <div class="step">НЕ ПРОСТО ГЕНЕРАЦИЯ <span>· мои ролики</span></div>
+    <div class="chip a" id="st-gen" style="font-size:38px;margin-bottom:18px">просто нажал «сгенерировать»<i class="strike" id="st-gs"></i></div>
+    <div class="st-pills"><div class="chip a" id="st-p1">свой сюжет</div><div class="chip a" id="st-p2">свой стиль</div></div>
+    <div class="st-phones">
+      <div class="ph a" id="st-1"><img class="seq" data-clip="doom-01" data-n="180" id="st-v1"><div class="st-tag">3D</div></div>
+      <div class="ph a" id="st-2"><img class="seq" data-clip="sugar-01" data-n="180" id="st-v2"><div class="st-tag" style="font-size:27px">МУЛЬТФИЛЬМ</div></div>
+      <div class="ph a" id="st-3"><img class="seq" data-clip="kids-04" data-n="180" id="st-v3"><div class="st-tag">2D</div></div>
+    </div>
+  </div></section>
+
+  <!-- DEADLINE -->
+  <section class="scene bgc" id="sc-dead"><div class="dots"></div><div class="zone">
+    <div class="dl-date a" id="dl-date">с 1 февраля 2027</div>
+    <div class="dl-lbl a" id="dl-lbl">порог монетизации<br>для новых каналов</div>
+    <div class="dl-num a" id="dl-numw"><div class="n" id="dl-n">4000</div><div class="x2 a" id="dl-x2">×2</div></div>
+    <div class="dl-sub a" id="dl-sub">часов просмотра за год</div>
+    <div class="dl-old a" id="dl-old">4000<i id="dl-strike"></i></div>
+    <div class="dl-note a" id="dl-note">1000 подписчиков — как было · кто уже в программе, тех не касается · объявлено YouTube в августе 2026</div>
   </div></section>
 
   <!-- 2 VIDIQ -->
@@ -377,7 +440,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:
   </div></section>
 
   <!-- 9 RETENTION -->
-  <section class="scene bgc" id="sc-ret"><div class="dots"></div><div class="zone">
+  <section class="scene" id="sc-ret"><div class="zone">
     <div class="fav a" id="rt-fav">мой фаворит</div>
     <div class="step">11 · YT-RETENTION <span>· удержание</span></div>
     <div class="rp a" id="rt-card">
@@ -481,11 +544,11 @@ function buildCaptions(){
   for(const s of TL.sentences){
     if(s.scene==='trend'||s.scene==='try') continue;
     let grp=[],len=0;
-    const flush=()=>{if(grp.length){caps.push({words:grp,start:grp[0].start,light:s.scene==='publish',color:s.scene==='retention'});grp=[];len=0}};
+    const flush=()=>{if(grp.length){caps.push({words:grp,start:grp[0].start,sEnd:s.end,light:s.scene==='publish',color:s.scene==='deadline'});grp=[];len=0}};
     for(const w of s.words){ if(len+w.text.length>26 && grp.length) flush(); grp.push({...w,text:w.text.replace(' —',' —')}); len+=w.text.length+1; }
     flush();
   }
-  for(let i=0;i<caps.length;i++) caps[i].end=i+1<caps.length?caps[i+1].start:TL.duration+5;
+  for(let i=0;i<caps.length;i++) caps[i].end=Math.min(i+1<caps.length?caps[i+1].start:TL.duration+5, caps[i].sEnd+.35);
 }
 let capIdx=-1;
 function applyCaptions(t){
@@ -501,8 +564,8 @@ function applyCaptions(t){
 }
 
 function setupScenes(){
-  const order=['trend','try','build','vidiq','skills','outliers','script','gen','edit','thumbs','retention','publish','share','cta'];
-  const ids={trend:'sc-trend',try:'sc-try',build:'sc-build',vidiq:'sc-vidiq',skills:'sc-skills',outliers:'sc-outliers',script:'sc-script',gen:'sc-gen',edit:'sc-edit',thumbs:'sc-thumbs',retention:'sc-ret',publish:'sc-pub',share:'sc-share',cta:'sc-cta'};
+  const order=['trend','pay','try','build','styles','deadline','vidiq','skills','outliers','script','edit','thumbs','retention','publish','cta'];
+  const ids={pay:'sc-pay',styles:'sc-styles',deadline:'sc-dead',trend:'sc-trend',try:'sc-try',build:'sc-build',vidiq:'sc-vidiq',skills:'sc-skills',outliers:'sc-outliers',script:'sc-script',gen:'sc-gen',edit:'sc-edit',thumbs:'sc-thumbs',retention:'sc-ret',publish:'sc-pub',share:'sc-share',cta:'sc-cta'};
   order.forEach((k,i)=>{const ss=TL.sentences.filter(s=>s.scene===k); scenes.push({el:$(ids[k]),zone:$(ids[k]).querySelector('.zone'),start:ss[0].start-(i?0.1:0)});});
   scenes.forEach((s,i)=>{s.end=i+1<scenes.length?scenes[i+1].start:TL.duration+10; if(i) SFX.push({t:s.start-.05,type:'whoosh'});});
 }
@@ -541,7 +604,7 @@ function setup(timeline){
   // 1 TREND — кинетический заголовок поверх живых кадров канала
   const T0=IX.trend, T1=IX.try, T2=IX.build;
   anim('tr-a',-1,{sfx:false}); anim('tr-b',W(T0,'американский')-.08,{s:.4,y:0,ease:'back'}); anim('tr-c',W(T0,'YouTube')-.08,{s:.3,y:30,r:-6});
-  anim('tr-d',W(T0,'с')-.05,{x:-200,y:0,s:1}); hit(W(T0,'YouTube')+.08,20); SFX.push({t:0,type:'riser'});
+  anim('tr-d',W(T0,'с')-.05,{x:-200,y:0,s:1}); hit(W(T0,'YouTube')+.08,24); SFX.push({t:0,type:'riser'});
   const fl=$('tr-fl'); [['faceless',30,10],['AI voice',520,0],['без лица',250,90],['USA',760,70],['Shorts',60,150],['автопилот',480,140]].forEach((f,i)=>{
     const d=document.createElement('div');d.className='fl a';d.textContent=f[0];d.style.left=f[1]+'px';d.style.top=f[2]+'px';d.id='fl'+i;fl.appendChild(d);
     anim(d,.35+i*.22,{s:.3,y:40,r:(i%2?10:-10),sfx:i%2?false:'pop'});});
@@ -569,10 +632,35 @@ function setup(timeline){
   updaters.push(t=>{ const dim=ex(clamp((t-tcl)/.3)); $('bd-wall').style.filter=`brightness(${1-.45*dim})`;
     setSeq($('bd-v1'),t,tb0); setSeq($('bd-v2'),t,tb0+1); });
 
+  // PAY — что монетизируется
+  const TP=IX.pay;
+  anim('pay-card',S(TP)-.05,{y:140,rx:-30}); anim('pay-r1',W(TP,'платит')-.05,{x:-260,y:0,sfx:'click'}); anim('pay-r2',W(TP,'шаблонные')-.1,{x:260,y:0,sfx:false});
+  hit(W(TP,'шаблонные')+.1,14);
+  updaters.push(t=>{ setSeq($('pay-v'),t,S(TP)); });
+
+  // STYLES — разные стили, мои ролики
+  const TS=IX.styles;
+  anim('st-gen',W(TS,'сгенерированное')-.15,{x:-220,y:0,s:.9}); SFX.push({t:W(TS,'видео')+.1,type:'strike'});
+  anim('st-p1',W(TS,'сюжет')-.05,{s:.4,y:20}); anim('st-p2',W(TS,'стиль')-.05,{s:.4,y:20,sfx:false});
+  anim('st-1',W(TS,'3D')-.08,{y:300,r:-14,s:.6}); anim('st-2',W(TS,'мультфильм')-.08,{y:300,s:.6}); anim('st-3',W(TS,'2D')-.08,{y:300,r:14,s:.6});
+  hit(W(TS,'3D'),10); hit(W(TS,'мультфильм'),10); hit(W(TS,'2D'),12);
+  updaters.push(t=>{ $('st-gs').style.transform=`scaleX(${ex(clamp((t-W(TS,'видео')-.1)/.25))})`; ['st-v1','st-v2','st-v3'].forEach((id,i)=>setSeq($(id),t,S(TS)+i*.3));
+    ['st-1','st-2','st-3'].forEach((id,i)=>{const el=$(id); if(t>W(TS,'2D')+.4) el.style.transform+=` rotate(${(i-1)*4+Math.sin(t*1.5+i)*1.2}deg) translateY(${i===1?-20:12}px)`;}); });
+
+  // DEADLINE — порог ×2 с 1 февраля 2027
+  const TD=IX.deadline;
+  anim('dl-date',W(TD,'февраля')-.1,{s:.4,y:0,r:-6}); anim('dl-lbl',W(TD,'порог')-.1,{x:-200,y:0,sfx:false});
+  anim('dl-numw',W(TD,'вдвое')-.15,{s:.5,y:0,sfx:false}); anim('dl-x2',W(TD,'вдвое'),{s:.2,y:0,r:-15,sfx:false}); hit(W(TD,'вдвое')+.05,20);
+  anim('dl-sub',W(TD,'часов')-.1,{y:40,sfx:false}); anim('dl-old',W(TD,'вместо')-.1,{x:-120,y:0,sfx:false}); anim('dl-note',W(TD,'4000',true)+.1,{y:50,sfx:false});
+  SFX.push({t:W(TD,'8000')-.1,type:'riser'}); hit(W(TD,'8000')+.6,16); SFX.push({t:W(TD,'4000')+.2,type:'strike'});
+  updaters.push(t=>{ const c=eio(clamp((t-W(TD,'8000')+.1)/.7)); $('dl-n').textContent=String(Math.round((4000+4000*c)/100)*100);
+    const pb=Math.exp(-Math.pow((t-W(TD,'8000')-.6)/.1,2)); $('dl-n').style.transform=`scale(${1+.14*pb})`; $('dl-n').style.transformOrigin='left bottom';
+    $('dl-strike').style.transform=`scaleX(${ex(clamp((t-W(TD,'4000')-.15)/.25))})`; });
+
   // 2 VIDIQ
   anim('vq-win',S(IX.vidiq),{rx:-50,y:120}); anim('vq-big',W(IX.vidiq,'больше')-.15,{s:.5,y:0});
   const tools=['keyword_research','outliers','generate_script','generate_titles','voiceover_generate','generate_thumbnail','generate_video','generate_broll','motion_graphics','generate_music','compose','generate_clips','video_transcript','channel_analytics'];
-  const tb=$('vq-tools'), t0=W(IX.vidiq,'больше'), t1=W(IX.vidiq,'аналитики');
+  const tb=$('vq-tools'), t0=W(IX.vidiq,'больше')-.2, t1=W(IX.vidiq,'инструментов',true);
   tools.forEach((n,i)=>{const d=document.createElement('div');d.className='tool a';d.textContent=n;d.id='vq-t'+i;tb.appendChild(d);
     anim(d,t0+(t1-t0)*i/tools.length,{d:.38,x:(i%3-1)*240,y:120,s:.5,r:(i%2?12:-12),sfx:i%3?false:'pop'});});
   SFX.push({t:W(IX.vidiq,'vidIQ'),type:'click'});
@@ -583,7 +671,7 @@ function setup(timeline){
     $('vq-tog').style.background=`rgba(201,167,255,${on})`; $('vq-tog').style.boxShadow=`0 0 ${30*on}px rgba(201,167,255,${.6*on})`;
     const c=eio(clamp((t-W(IX.vidiq,'больше'))/1.15)); $('vq-n').textContent=Math.round(71*c);
     const pb=Math.exp(-Math.pow((t-nEnd)/.1,2)); $('vq-n').style.transform=`scale(${1+.18*pb})`;
-    $('vq-t0').classList.toggle('hl',t>=W(IX.vidiq,'поиска')); $('vq-t13').classList.toggle('hl',t>=W(IX.vidiq,'аналитики'));
+    $('vq-t0').classList.toggle('hl',t>=W(IX.vidiq,'семидесяти')); $('vq-t13').classList.toggle('hl',t>=W(IX.vidiq,'инструментов'));
   });
 
   // 3 SKILLS
@@ -592,7 +680,7 @@ function setup(timeline){
   ['niche','outliers','brand','script','voice','visuals','edit','thumbnail','shorts','publish','retention','money'].forEach((n,i)=>{
     const d=document.createElement('div');d.className='sk a';d.innerHTML=`<div class="no">${String(i+1).padStart(2,'0')}</div><div class="nm">${n}</div>`;g.appendChild(d);
     anim(d,gs+i*.055,{d:.42,y:40,s:.9,rx:-95,sfx:i%3?false:'pop'});});
-  anim('sk-ok',gs-.2,{y:10,sfx:'click'}); anim('sk-rec',W(IX.skills,'рецепт')-.1,{s:.6,y:30});
+  anim('sk-ok',gs-.2,{y:10,sfx:'click'}); anim('sk-rec',W(IX.skills,'скиллов',true)+.15,{s:.6,y:30});
   updaters.push(t=>{const k=Math.round(cmd.length*clamp((t-S(IX.skills))/(gs-.3-S(IX.skills)))); $('sk-cmd').textContent=cmd.slice(0,k);
     $('sk-caret').style.opacity=(t<gs-.2&&Math.floor(t*3)%2===0)?1:0;});
 
@@ -607,27 +695,13 @@ function setup(timeline){
   // 5 SCRIPT — реальные заголовки канала
   anim('sc-doc',S(IX.script)-.05,{rx:-40,y:100});
   const hooks=[['Nobody Warned You What AI Does to Your Brain','9.1'],['What One Donut Really Does to Your Body','8.4'],['How to Actually Stop Doomscrolling','7.8'],['Your Kid\'s Cartoon No Longer Ends','7.5'],['Why You Can\'t Focus Anymore','6.9']];
-  const hb=$('sc-hooks'), h0=W(IX.script,'сценарий')-.1, h1=W(IX.script,'хуков');
+  const hb=$('sc-hooks'), h0=W(IX.script,'сценарий')-.25, h1=W(IX.script,'хуками');
   hooks.forEach((h,i)=>{const d=document.createElement('div');d.className='hrow a';d.id='hr'+i;d.innerHTML=`<div class="k">H${i+1}</div><div class="tx">${h[0]}</div><div class="sc" id="hs${i}">—</div>`;hb.appendChild(d);
     anim(d,h0+(h1-h0)*i/5,{d:.4,x:420,y:0,s:.9,sfx:i%2?false:'pop'});});
-  const tsc=W(IX.script,'пять')-.05; SFX.push({t:tsc,type:'tick'},{t:tsc+.2,type:'tick'},{t:tsc+.4,type:'tick'});
-  hit(W(IX.script,'оценкой')+.05,10);
+  const tsc=W(IX.script,'пятью')-.05; SFX.push({t:tsc,type:'tick'},{t:tsc+.2,type:'tick'},{t:tsc+.4,type:'tick'});
+  hit(W(IX.script,'хуками')+.05,10);
   updaters.push(t=>{hooks.forEach((h,i)=>{$('hs'+i).textContent=t>=tsc+i*.1?h[1]:'—';});
-    const best=t>=W(IX.script,'оценкой'); $('hr0').classList.toggle('best',best); if(best){const pb=.5+.5*Math.sin((t-W(IX.script,'оценкой'))*9); $('hr0').style.boxShadow=`0 0 ${24*pb}px rgba(201,167,255,.55)`;} });
-
-  // 6 GEN — голос и живые шортс канала
-  anim('gn-voice',S(IX.gen)-.05,{y:80,rx:-30});
-  const sc=W(IX.gen,'Персонажи');
-  anim('gn-p1',sc-.15,{x:-380,y:60,r:-14,s:.8}); anim('gn-p2',sc+.1,{x:380,y:60,r:14,s:.8});
-  anim('gn-d1',sc+1.0,{s:.4,y:0,sfx:'click'}); anim('gn-d2',sc+1.35,{s:.4,y:0,sfx:false});
-  const wv=$('gn-wave'); for(let i=0;i<46;i++){wv.appendChild(document.createElement('i'));}
-  updaters.push(t=>{
-    const bars=wv.children, act=t<sc+.2?1:.3;
-    for(let i=0;i<bars.length;i++){bars[i].style.height=(16+act*112*Math.abs(Math.sin(t*7.3+i*.62)*Math.cos(t*3.1+i*.27)))+'px';}
-    const r1=eo(clamp((t-sc)/1.0)), r2=eo(clamp((t-sc-.25)/1.1));
-    $('gn-sc1').style.transform=`translateY(${-100*r1}%)`; $('gn-sc2').style.transform=`translateY(${-100*r2}%)`;
-    setSeq($('gn-s1'),t,sc-.2); setSeq($('gn-s2'),t,sc);
-  });
+    const best=t>=W(IX.script,'хуками'); $('hr0').classList.toggle('best',best); if(best){const pb=.5+.5*Math.sin((t-W(IX.script,'хуками'))*9); $('hr0').style.boxShadow=`0 0 ${24*pb}px rgba(201,167,255,.55)`;} });
 
   // 7 EDIT — живой кадр из длинного ролика
   anim('ed-prev',S(IX.edit)-.05,{s:.7,y:40,rx:25}); anim('ed-tl',S(IX.edit)+.05,{y:120});
@@ -642,13 +716,13 @@ function setup(timeline){
     const w=$('ed-tl').clientWidth-22-120; $('ed-ph').style.left=(120+w*p)+'px'; });
 
   // 8 THUMBS + SHORTS — реальные варианты обложки
-  const sh=W(IX.thumbs,'Шортс');
+  const sh=W(IX.thumbs,'режет');
   ['th-1','th-2','th-3'].forEach((id,i)=>anim(id,S(IX.thumbs)+i*.14,{x:(i-1)*260,y:120,r:(i-1)*8,s:.7,out:sh-.3,oy:-80}));
-  anim('th-ab',W(IX.thumbs,'кликабельности')+.35,{s:.3,y:0,sfx:'click'}); hit(W(IX.thumbs,'кликабельности')+.3,10);
+  anim('th-ab',W(IX.thumbs,'превью')+.45,{s:.3,y:0,sfx:'click'}); hit(W(IX.thumbs,'превью')+.4,10);
   ['th-p1','th-p2','th-p3'].forEach((id,i)=>anim(id,sh+.02+i*.12,{y:260,r:(i-1)*14,s:.7,sfx:i?false:'pop'}));
-  SFX.push({t:W(IX.thumbs,'оценкой')-.05,type:'tick'},{t:W(IX.thumbs,'оценкой')+.1,type:'tick'},{t:W(IX.thumbs,'оценкой')+.25,type:'tick'});
-  updaters.push(t=>{ const tsc=W(IX.thumbs,'оценкой')-.05; const v=['6.8','8.9','7.2'];
-    v.forEach((x,i)=>$('th-s'+(i+1)).textContent=t>=tsc+i*.15?x:'—'); $('th-2').classList.toggle('best',t>=W(IX.thumbs,'кликабельности')+.2);
+  SFX.push({t:W(IX.thumbs,'превью')-.1,type:'tick'},{t:W(IX.thumbs,'превью')+.05,type:'tick'},{t:W(IX.thumbs,'превью')+.2,type:'tick'});
+  updaters.push(t=>{ const tsc=W(IX.thumbs,'подбирает')-.05; const v=['6.8','8.9','7.2'];
+    v.forEach((x,i)=>$('th-s'+(i+1)).textContent=t>=tsc+i*.15?x:'—'); $('th-2').classList.toggle('best',t>=W(IX.thumbs,'превью')+.35);
     $('th-step').innerHTML=t>=sh-.15?'09 · YT-SHORTS <span>· из длинного видео</span>':'08 · YT-THUMBNAIL <span>· превью канала</span>';
     $('th-col').style.display=t>=sh+.2?'none':'grid';
     ['th-q1','th-q2','th-q3'].forEach((id,i)=>setSeq($(id),t,sh+i*.4));
@@ -656,11 +730,11 @@ function setup(timeline){
   });
 
   // 9 RETENTION
-  anim('rt-fav',S(IX.retention)-.05,{s:.3,y:0,r:-10}); anim('rt-card',S(IX.retention)+.05,{y:120,rx:-30}); anim('rt-drop',W(IX.retention,'секунда'),{s:.3,y:0,sfx:false});
-  anim('rt-q',W(IX.retention,'ушли')-.1,{x:-200,y:0}); anim('rt-fix',W(IX.retention,'одна')-.1,{s:.6,y:60}); hit(W(IX.retention,'секунда')+.05,18); hit(W(IX.retention,'одна')+.2,8);
+  anim('rt-fav',S(IX.retention)-.05,{s:.3,y:0,r:-10}); anim('rt-card',S(IX.retention)+.05,{y:120,rx:-30}); anim('rt-drop',W(IX.retention,'секунду'),{s:.3,y:0,sfx:false});
+  anim('rt-q',W(IX.retention,'ушли')-.1,{x:-200,y:0}); anim('rt-fix',W(IX.retention,'зрители')+.25,{s:.6,y:60}); hit(W(IX.retention,'секунду')+.05,18); hit(W(IX.retention,'зрители')+.35,8);
   const cv=$('rt-curve'), L=cv.getTotalLength(); cv.style.strokeDasharray=L;
   updaters.push(t=>{ cv.style.strokeDashoffset=L*(1-eio(clamp((t-S(IX.retention)-.1)/1.2)));
-    const m=ex(clamp((t-W(IX.retention,'секунда')+.1)/.25)); $('rt-line').style.opacity=m; $('rt-dot').style.opacity=m; $('rt-dot').setAttribute('r',15+8*Math.max(0,Math.sin(t*7))*m); });
+    const m=ex(clamp((t-W(IX.retention,'секунду')+.1)/.25)); $('rt-line').style.opacity=m; $('rt-dot').style.opacity=m; $('rt-dot').setAttribute('r',15+8*Math.max(0,Math.sin(t*7))*m); });
 
   // 10 PUBLISH — реальный ролик канала
   anim('pb-dlg',S(IX.publish)-.05,{y:140,rx:-35}); anim('pb-lock',W(IX.publish,'без')-.05,{s:.5,y:40});
@@ -668,11 +742,6 @@ function setup(timeline){
   updaters.push(t=>{const m=eio(clamp((t-S(IX.publish))/(tc-S(IX.publish)+.05)));
     const cur=$('pb-cur'); cur.style.left=(640-430*m)+'px'; cur.style.top=(860-250*m)+'px'; cur.style.opacity=t<S(IX.publish)?0:1;
     const click=t>=tc&&t<tc+.22; $('pb-btn').style.transform=`scale(${click?.92:1})`; $('pb-btn').style.boxShadow=click?'0 0 0 16px rgba(98,0,255,.2)':'none'; });
-
-  // 11 SHARE
-  anim('sh-sheet',S(IX.share)-.05,{y:160,rx:-30}); anim('sh-ck',W(IX.share,'тому'),{s:.2,y:0,sfx:'click'}); anim('sh-send',W(IX.share,'хочет'),{s:.7,y:30});
-  SFX.push({t:W(IX.share,'YouTube')+.1,type:'whoosh'});
-  updaters.push(t=>{const f=eo(clamp((t-W(IX.share,'YouTube')-.1)/.55)); $('sh-plane').style.transform=`translate(${220*f}px,${-260*f}px) rotate(${18*f}deg) scale(${1+.4*f})`; $('sh-plane').style.opacity=1-f; });
 
   // 12 CTA
   anim('ct-h',S(IX.cta)-.05,{y:90,s:.8}); ['ct-g1','ct-g2','ct-g3','ct-g4'].forEach((id,i)=>anim(id,W(IX.cta,'плагины')+i*.1,{s:.4,y:30,r:(i%2?6:-6),sfx:i%2?false:'pop'}));

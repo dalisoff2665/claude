@@ -2,7 +2,7 @@
 
 Формат как у saint4ai («11 бесплатных навыков Claude для YouTube»): голос за кадром + моушн-графика,
 прогрессивные субтитры, кодовое слово в конце. В кадре — примеры роликов моего канала:
-обложки, шортс и куски роликов из Cloudinary. 60 с, 1080×1920, −14 LUFS.
+обложки, шортс и куски роликов из Cloudinary. 62 с, 1080×1920, −14 LUFS.
 
 | Файл | Что это |
 |---|---|
@@ -32,7 +32,7 @@
 ./fetch_assets.sh
 for c in ai-01 doom-01 sugar-01 kids-04 donut doom-long; do mkdir -p assets/frames/$c && ffmpeg -v error -y -i assets/clips/$c.mp4 -vf fps=30 -q:v 4 assets/frames/$c/%04d.jpg; done
 ffmpeg -y -i assets/thumbs/doomscrolling_thumb-B.jpg -vf "crop=340:340:690:110,scale=300:300" assets/avatar.jpg
-python3 tts_edge.py script.json --rate +10% --tempo 1.25
+python3 tts_edge.py script.json --voice en-US-AndrewMultilingualNeural --rate +25%
 node render.cjs --stills 4.9,18.6,38.9   # проверочные кадры в build/
 node render.cjs && python3 mix.py
 ```
