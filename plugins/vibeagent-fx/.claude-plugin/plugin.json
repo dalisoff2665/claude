@@ -1,0 +1,19 @@
+{
+  "name": "vibeagent-fx",
+  "version": "1.0.0",
+  "description": "20 видеоэффектов для говорящей головы: даёшь клип — получаешь MP4 со своим звуком. /grid-dive, /portal, /clone-room, /shatter и ещё 16. Рендер локально.",
+  "author": {
+    "name": "Daniel Alisov",
+    "url": "https://vibeagent.kz"
+  },
+  "keywords": [
+    "video",
+    "effects",
+    "reels",
+    "talking-head",
+    "ffmpeg",
+    "playwright"
+  ],
+  "homepage": "https://learn.vibeagent.kz/r/effekt",
+  "repository": "https://github.com/dalisoff2665/claude"
+}

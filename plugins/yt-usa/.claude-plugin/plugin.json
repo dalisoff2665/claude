@@ -1,0 +1,21 @@
+{
+  "name": "yt-usa",
+  "version": "1.0.0",
+  "description": "Американский YouTube с ИИ: 12 скиллов для Claude — ниша и RPM по США, видео-выбросы ×10, оформление канала, сценарий на английском, голос, генерация фото и видео, монтаж, превью, шортс, SEO, удержание, монетизация. Работает через vidIQ MCP и твои генераторы.",
+  "author": {
+    "name": "Daniel Alisov",
+    "url": "https://vibeagent.kz"
+  },
+  "keywords": [
+    "youtube",
+    "usa",
+    "vidiq",
+    "faceless",
+    "monetization",
+    "thumbnails",
+    "shorts",
+    "ai-video"
+  ],
+  "homepage": "https://github.com/dalisoff2665/claude/tree/main/plugins/yt-usa",
+  "repository": "https://github.com/dalisoff2665/claude"
+}
