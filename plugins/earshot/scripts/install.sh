@@ -59,6 +59,9 @@ fi
 "$VPY" -m pip install -q -e "$ROOT/src[mcp]"   # без [llm]: загрузка аудио в Gemini не ставится
 
 export EARSHOT_HOME="$ROOT"
+# Модели качаем обычным HTTP, а не протоколом Xet: Xet ходит на отдельные хосты,
+# которых нет в сетевых настройках облачных сессий. На Mac разницы нет.
+export HF_HUB_DISABLE_XET=1
 EARSHOT="$ROOT/venv/bin/earshot"
 
 # 5. Модели (зафиксированные ревизии, safetensors). Дальше грузятся только из кэша, Hub не трогается.
