@@ -1,0 +1,65 @@
+{
+  "id": "yapping",
+  "version": "1.0.0",
+  "description": "Быстрая нарезка под говорящую голову: жёсткие склейки, плашка-счётчик, лого бренда, субтитры по одному слову.",
+
+  "canvas": { "width": 1080, "height": 1920, "fps": 24 },
+
+  "timing": {
+    "shot_seconds": 1.7,
+    "frame_rounding": "nearest",
+    "min_word_frames": 3,
+    "max_shots": 12
+  },
+
+  "palette": {
+    "bg": "#0B0B0F",
+    "bg_glow_opacity": 0.22,
+    "fg": "#FFFFFF",
+    "muted": "#8A8AA3",
+    "accent": "#E8FF5A",
+    "plaque_bg": "#FFFFFF",
+    "plaque_fg": "#0B0B0F"
+  },
+
+  "typography": {
+    "font_family": "DejaVu Sans",
+    "font_file": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "headline_size": 96,
+    "headline_wrap_chars": 14,
+    "headline_line_height": 112,
+    "note_size": 46,
+    "plaque_size": 38,
+    "subtitle_size": 86
+  },
+
+  "layout": {
+    "logo_size": 260,
+    "logo_top": 560,
+    "plaque_top": 420,
+    "plaque_w": 176,
+    "plaque_h": 74,
+    "headline_top": 940,
+    "note_gap": 52,
+    "subtitle_baseline": 1560,
+    "safe_margin": 72
+  },
+
+  "subtitles": {
+    "mode": "per_word",
+    "uppercase": false,
+    "outline": 7,
+    "shadow": 0,
+    "highlight_cta_keyword": true
+  },
+
+  "encode": {
+    "vcodec": "libx264",
+    "crf": 18,
+    "preset": "medium",
+    "pix_fmt": "yuv420p",
+    "acodec": "aac",
+    "abitrate": "192k",
+    "silent_track_if_no_audio": true
+  }
+}
