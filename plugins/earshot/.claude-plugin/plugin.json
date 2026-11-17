@@ -1,0 +1,18 @@
+{
+  "name": "earshot",
+  "version": "0.4.0",
+  "description": "Слух для агента: описать звук словами, найти лучший момент в записи, проверить синхрон с картинкой, оценить звук ролика. Банк из 252 SFX в коде, кит под монтаж на музыку. Локально, на CPU, через MCP.",
+  "author": {
+    "name": "Daniel Alisov"
+  },
+  "keywords": [
+    "audio",
+    "sfx",
+    "sound-design",
+    "mcp",
+    "video"
+  ],
+  "homepage": "https://github.com/dalisoff2665/claude",
+  "repository": "https://github.com/dalisoff2665/claude",
+  "license": "MIT"
+}

@@ -7,6 +7,8 @@
 ```
 /plugin marketplace add dalisoff2665/claude
 /plugin install reels-factory@alisov-tools
+/plugin install earshot@alisov-tools
+/plugin install doubt-driven@alisov-tools
 ```
 
 ## Обновление
@@ -92,6 +94,21 @@ claude plugin marketplace add dalisoff2665/claude && claude plugin install vibea
 Нужен vidIQ в Claude (Connectors или `claude mcp add --transport http vidiq https://mcp.vidiq.com/mcp`),
 для монтажа — ffmpeg. Старт: `/yt-usa:setup`, потом `/yt-usa:start`.
 Подробно — `plugins/yt-usa/README.md`, что ставить и сколько стоит — `plugins/yt-usa/MCP.md`.
+
+## earshot
+
+Слух для агента: звук в цифры и слова. Что звучит, где лучший момент в записи, попадает ли удар
+в склейку, как звук рилса выглядит рядом с профессиональными роликами. Банк из 252 SFX в коде
+и кит `launch` под монтаж на музыку. Работает локально, на CPU, через MCP.
+
+После `/plugin install` один раз на машину: `/earshot:setup` (Python 3.10+, ffmpeg, ~1.1 ГБ моделей).
+Подробности и модель угроз — `plugins/earshot/README.md`.
+
+## doubt-driven
+
+Скилл Addy Osmani [doubt-driven-development](https://github.com/addyosmani/agent-skills/blob/main/skills/doubt-driven-development/SKILL.md):
+перед тем как нетривиальное решение останется в коде, его разбирает свежий агент с задачей
+«найди, что не так». Максимум три круга. Подробности — `plugins/doubt-driven/README.md`.
 
 ## Выпуск новой версии
 

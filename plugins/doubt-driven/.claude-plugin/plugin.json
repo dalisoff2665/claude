@@ -1,0 +1,17 @@
+{
+  "name": "doubt-driven",
+  "version": "0.6.15",
+  "description": "Doubt-Driven Development (Addy Osmani): каждое нетривиальное решение проходит состязательное ревью свежим агентом до того, как оно останется в коде.",
+  "author": {
+    "name": "Daniel Alisov"
+  },
+  "keywords": [
+    "skills",
+    "review",
+    "engineering",
+    "quality"
+  ],
+  "homepage": "https://github.com/dalisoff2665/claude",
+  "repository": "https://github.com/dalisoff2665/claude",
+  "license": "MIT"
+}

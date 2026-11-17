@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "earshot": {
+      "command": "bash",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/bin/earshot-mcp"]
+    }
+  }
+}
